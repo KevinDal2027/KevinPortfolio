@@ -1,0 +1,16 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  .dark-mode .navbar {
+    background-color: #f3f0f021 !important;
+  }
+  
+  .dark-mode .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+  
+  .dark-mode .nav-link:hover {
+    color: rgba(255, 255, 255, 1) !important;
+  }

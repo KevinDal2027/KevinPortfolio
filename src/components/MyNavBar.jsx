@@ -1,0 +1,91 @@
+import React, { useState } from "react";
+import { Navbar, Nav, Form, Container } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+import { FaGithub, FaJava, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+const MyNavbar = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle("dark-mode", !darkMode);
+  };
+
+  const handleToggle = () => {
+    setExpanded(!expanded);
+  };
+
+  const Home = () => {
+    if(expanded){
+      return (<Nav.Link as={Link} to="/" className="fs-5" onClick={handleSelect}>Home</Nav.Link>)
+    }
+  }
+
+  const handleSelect = () => {
+    setExpanded(false);
+  };
+
+  return (
+    <Navbar
+      bg={darkMode ? "dark" : "light"}
+      variant={darkMode ? "dark" : "light"}
+      expand="lg"
+      sticky="top"
+      expanded={expanded}
+    >
+      <Container className="d-flex justify-content-between align-items-center">
+        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+          <img
+            src="./kevinLogo.svg"
+            alt="Kevin Nguyen"
+            width="100"
+            height="100"
+          />
+        </Navbar.Brand>
+        <Form className="d-flex justify-content-center align-items-center">
+          <img
+            src="./darkMode.svg"
+            alt="Dark Mode"
+            width="30"
+            height="30"
+            onClick={toggleDarkMode}
+            style={{
+              cursor: 'pointer',
+              filter: darkMode ? 'invert(1)' : 'invert(0)',
+            }}
+          />
+        </Form>
+        <Navbar.Toggle aria-controls="responsive-navbar" onClick={handleToggle}>
+           <img
+            src={expanded ? "./expandedIcon.svg" : "./collapsedIcon.svg"}
+            alt="Toggle"
+            width="30"
+            height="30"
+            style={{
+              filter: darkMode ? 'invert(1)' : 'invert(0)',
+            }}
+          />
+        </Navbar.Toggle>
+
+        <Navbar.Collapse id="responsive-navbar" className="justify-content-end">
+          <Nav>
+            <Home />
+            <Nav.Link as={Link} to="/about" className="fs-5" onClick={handleSelect}>About</Nav.Link>
+            <Nav.Link as={Link} to="/projects" className="fs-5" onClick={handleSelect}>Projects</Nav.Link>
+            <Nav className="d-flex justfiy-content-center align-items-center ms-auto">
+            <Nav.Link href="https://github.com/KevinDal2027" target="_blank" rel="noopener noreferrer" className="align-items-center">
+            <FaGithub size={35}/>
+            </Nav.Link>
+            <Nav.Link href="https://linkedin.com/in/kevin-nguyen-dal" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={35} />
+            </Nav.Link>
+        </Nav>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
+
+export default MyNavbar;
