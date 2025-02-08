@@ -169,6 +169,7 @@ const Projects = () => {
               <Card.Title className="text-white fs-2 fw-bold">Portfolio Website</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
               Well... You are on it right now!!! I don't think I need description for this one. Check it out for yourself!!!
+              Click on About to find out more about me, Projects to see my work, and maybe checkout my LinkedIn and GitHub.
               
               <div class = "skillsWrap7" className='pb-5'>
                  <div class = "item_7 item1"><img alt = "React JS icon" width= "150px" src='src/assets/skills/React.js.svg' /></div>

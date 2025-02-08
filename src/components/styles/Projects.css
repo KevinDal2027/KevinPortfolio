@@ -33,7 +33,7 @@ button.btn-light:hover {
   position: absolute;
   left: calc(200px * 7);
   animation-name: scrollLeft;
-  animation-duration: 15s;
+  animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -59,25 +59,25 @@ button.btn-light:hover {
 }
 
 .item1 {
-  animation-delay: calc(15s / 7 * (7 - 1) * -1);
+  animation-delay: calc(20s / 7 * (7 - 1) * -1);
 }
 .item2 {
-  animation-delay: calc(15s / 7 * (7 - 2) * -1);
+  animation-delay: calc(20s / 7 * (7 - 2) * -1);
 }
 .item3 {
-  animation-delay: calc(15s / 7 * (7 - 3) * -1);
+  animation-delay: calc(20s / 7 * (7 - 3) * -1);
 }
 .item4 {
-  animation-delay: calc(15s / 7 * (7 - 4) * -1);
+  animation-delay: calc(20s / 7 * (7 - 4) * -1);
 }
 .item5 {
-  animation-delay: calc(15s / 7 * (7 - 5) * -1);
+  animation-delay: calc(20s / 7 * (7 - 5) * -1);
 }
 .item6 {
-  animation-delay: calc(15s / 7 * (7 - 6) * -1);
+  animation-delay: calc(20s / 7 * (7 - 6) * -1);
 }
 .item7 {
-  animation-delay: calc(15s / 7 * (7 - 7) * -1);
+  animation-delay: calc(20s / 7 * (7 - 7) * -1);
 }
 
 .item_6 {
@@ -86,7 +86,7 @@ button.btn-light:hover {
   position: absolute;
   left: calc(200px * 6);
   animation-name: scrollLeft6;
-  animation-duration:16s;
+  animation-duration:21s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -111,21 +111,21 @@ button.btn-light:hover {
 }
 
 .item1_6 {
-  animation-delay: calc(16s / 6 * (6 - 1) * -1);
+  animation-delay: calc(21s / 6 * (6 - 1) * -1);
 }
 .item2_6 {
-  animation-delay: calc(16s / 6 * (6 - 2) * -1);
+  animation-delay: calc(21s / 6 * (6 - 2) * -1);
 }
 .item3_6 {
-  animation-delay: calc(16s / 6 * (6 - 3) * -1);
+  animation-delay: calc(21s / 6 * (6 - 3) * -1);
 }
 .item4_6 {
-  animation-delay: calc(16s / 6 * (6 - 4) * -1);
+  animation-delay: calc(21s / 6 * (6 - 4) * -1);
 }
 .item5_6 {
-  animation-delay: calc(16s / 6 * (6 - 5) * -1);
+  animation-delay: calc(21s / 6 * (6 - 5) * -1);
 }
 .item6_6 {
-  animation-delay: calc(16s / 6 * (6 - 6) * -1);
+  animation-delay: calc(21s / 6 * (6 - 6) * -1);
 }
 
