@@ -1,0 +1,21 @@
+@media (max-width: 600px) {
+    #myLogo {
+      width: 75px;
+      height: auto;
+      /* display: none; */
+    }
+  
+    #dark-mode-icon {
+      width: 25px;
+      height: auto;
+      /* display: none; */
+    }
+    #toggle-icon {
+      width: 30px;
+      height: auto;
+    }
+  }
+
+  #myNavbar {
+    padding: 0;
+  }

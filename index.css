@@ -14,3 +14,9 @@ body.dark-mode {
   .dark-mode .nav-link:hover {
     color: rgba(255, 255, 255, 1) !important;
   }
+
+  @media (max-width: 600px) {
+    body {
+      overflow: hidden;
+    }
+  }

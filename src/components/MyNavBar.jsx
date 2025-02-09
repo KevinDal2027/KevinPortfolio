@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Navbar, Nav, Form, Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { FaGithub, FaJava, FaLinkedin, FaTwitter } from "react-icons/fa";
+import "./styles/MyNavBar.css";
 
 const MyNavbar = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -33,38 +34,45 @@ const MyNavbar = () => {
       expand="lg"
       sticky="top"
       expanded={expanded}
+      id = "myNavbar"
     >
       <Container className="d-flex justify-content-between align-items-center">
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img
             src="./kevinLogo.svg"
             alt="Kevin Nguyen"
-            width="100"
-            height="100"
+            width="100px"
+            height="auto"
+            style={{
+              filter: darkMode ? 'invert(1)' : 'invert(0)',
+            }}
+            id = "myLogo"
           />
         </Navbar.Brand>
         <Form className="d-flex justify-content-center align-items-center">
           <img
             src="./darkMode.svg"
             alt="Dark Mode"
-            width="30"
-            height="30"
+            width="30px"
+            height="auto"
             onClick={toggleDarkMode}
             style={{
               cursor: 'pointer',
               filter: darkMode ? 'invert(1)' : 'invert(0)',
             }}
+            id = "dark-mode-icon"
           />
         </Form>
         <Navbar.Toggle aria-controls="responsive-navbar" onClick={handleToggle}>
            <img
             src={expanded ? "./expandedIcon.svg" : "./collapsedIcon.svg"}
             alt="Toggle"
-            width="30"
-            height="30"
+            width="45px"
+            height="auto"
             style={{
               filter: darkMode ? 'invert(1)' : 'invert(0)',
             }}
+            id = "toggle-icon"
           />
         </Navbar.Toggle>
 
