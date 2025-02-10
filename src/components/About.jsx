@@ -12,9 +12,9 @@ const About = () => {
   };
 
   return (
-    <div className="container d-flex align-items-center flex-column border border-2 border-dark p-3">
+    <div className="container border border-2 border-dark p-3">
       <h1 className='text-center'>About Me</h1>
-      <p className=''>
+      <p>
         Originally from Vietnam, I moved to Canada about 8 years ago. 
         Most of my life, I have been passionate about trying new things and learn new skills.
         <br/><br/><em>Also, try clicking on those links.

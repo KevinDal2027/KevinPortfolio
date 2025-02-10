@@ -35,14 +35,13 @@
   }
   .container{
     width: 85%;
-    overflow: auto !important;
+    margin-bottom: 30px;
+    height: auto;
   }
 
   @media screen and (min-width: 600px) {
     .container {
       width: 60%;
-      justify-content: space-around;
-      align-self: center;
     }
     .container p {
         font-size: 1.4rem;

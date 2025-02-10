@@ -18,3 +18,8 @@ body.dark-mode {
 * {
   font-family: 'Times New Roman', serif;
 }
+
+#root {
+  height: 100vh;
+  overflow-y: scroll !important;
+}
