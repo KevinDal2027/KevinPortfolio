@@ -21,5 +21,7 @@ body.dark-mode {
 
 #root {
   height: 100vh;
+  width:auto;
   overflow-y: scroll !important;
+  overflow-x:hidden !important;
 }

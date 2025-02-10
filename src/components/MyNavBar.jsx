@@ -15,6 +15,12 @@ const MyNavbar = () => {
 
   const handleToggle = () => {
     setExpanded(!expanded);
+    if (!expanded) {
+      document.getElementById("myNavbar").classList.remove("heightClosed");
+    }
+    if (expanded) {
+      document.getElementById("myNavbar").classList.add("heightClosed");
+    }
   };
 
   const Home = () => {
@@ -25,6 +31,7 @@ const MyNavbar = () => {
 
   const handleSelect = () => {
     setExpanded(false);
+    document.getElementById("myNavbar").classList.add("heightClosed");
   };
 
   return (
@@ -35,9 +42,10 @@ const MyNavbar = () => {
       sticky="top"
       expanded={expanded}
       id = "myNavbar"
+      className="heightClosed"
     >
-      <Container className="d-flex justify-content-between align-items-center">
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+      <Container className="d-flex justify-content-between mt-auto">
+        <Navbar.Brand as={Link} to="/" className="">
           <img
             src="./kevinLogo.svg"
             alt="Kevin Nguyen"
@@ -49,7 +57,7 @@ const MyNavbar = () => {
             id = "myLogo"
           />
         </Navbar.Brand>
-        <Form className="d-flex justify-content-center align-items-center">
+        <Form className="">
           <img
             src="./darkMode.svg"
             alt="Dark Mode"

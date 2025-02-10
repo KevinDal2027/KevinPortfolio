@@ -16,6 +16,11 @@
     }
   }
 
-  #myNavbar {
-    padding: 0;
-  }
+#myNavbar {
+  padding: 0;
+  margin: 0;
+}
+
+.heightClosed {
+  height: 100px;
+}
