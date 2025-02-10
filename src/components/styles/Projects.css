@@ -157,13 +157,9 @@ button.btn-light:hover {
     max-width: 100vw;
     padding: 0;
   }
-
   .project-card .card-text,
-
   .theDescription {
-
     font-size: 0.85rem !important;
-
   }
   .projectImg {
     max-width: 100%;

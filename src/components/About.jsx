@@ -12,7 +12,7 @@ const About = () => {
   };
 
   return (
-    <div className="container mt-5 d-flex align-items-center flex-column">
+    <div className="container mt-5 d-flex align-items-center flex-column border border-2 border-dark p-3">
       <h1 className='text-center'>About Me</h1>
       <p className=''>
         Originally from Vietnam, I moved to Canada about 8 years ago. 

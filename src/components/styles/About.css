@@ -14,6 +14,7 @@
     border-radius: 10px;
     z-index: 1000;
     color: white;
+    overflow: auto;
   }
   
   .close-button {
@@ -34,6 +35,7 @@
   }
   .container{
     width: 85%;
+    overflow: auto !important;
   }
 
   @media screen and (min-width: 600px) {
