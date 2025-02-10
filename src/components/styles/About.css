@@ -6,7 +6,7 @@
   
   .image-popup {
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.7);
@@ -26,16 +26,9 @@
     font-size: 20px;
     cursor: pointer;
   }
-  
-  .image-gallery {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-  }
-  
+    
   .image-gallery img {
-    max-width: 85vw;
+    max-width: 75vw;
     padding-top: 40px;
     border-radius: 5px;
   }
@@ -51,5 +44,8 @@
     }
     .container p {
         font-size: 1.4rem;
+    }
+    .image-gallery img {
+      max-width: 35vw;
     }
   }
