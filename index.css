@@ -15,11 +15,6 @@ body.dark-mode {
     color: rgba(255, 255, 255, 1) !important;
   }
 
-  @media (max-width: 600px) {
-    body {
-      overflow: hidden;
-    }
-  }
 * {
   font-family: 'Times New Roman', serif;
 }
