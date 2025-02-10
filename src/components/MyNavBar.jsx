@@ -87,8 +87,8 @@ const MyNavbar = () => {
         <Navbar.Collapse id="responsive-navbar" className="justify-content-end">
           <Nav>
             <Home />
-            <Nav.Link as={Link} to="/about" className="fs-5" onClick={handleSelect}>ABOUT</Nav.Link>
-            <Nav.Link as={Link} to="/projects" className="fs-5" onClick={handleSelect}>PROJECTS</Nav.Link>
+            <Nav.Link as={Link} to="/about" className="fs-5 about-link" onClick={handleSelect}>ABOUT</Nav.Link>
+            <Nav.Link as={Link} to="/projects" className="fs-5 about-link" onClick={handleSelect}>PROJECTS</Nav.Link>
             <Nav className="d-flex justify-content-center align-items-center ms-auto">
             <Nav.Link href="https://github.com/KevinDal2027" target="_blank" rel="noopener noreferrer" className="align-items-center">
             <FaGithub size={35}/>

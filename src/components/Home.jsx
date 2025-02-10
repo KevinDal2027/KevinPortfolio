@@ -13,7 +13,7 @@ const Home = () => {
       </p>
       <img src='./homeBG.png' alt="Background" className="home-image" />
       <p className="learn-more">Learn more about me...</p>
-      <Nav.Link as={Link} to="/about" className="fs-5 p-1 about-link border rounded-top rounded-bottom border-3 border-dark">ABOUT</Nav.Link>
+      <Nav.Link as={Link} to="/about" className="p-1 about-link border rounded-top rounded-bottom border-3 border-dark">ABOUT</Nav.Link>
       <p className="follow-me">
         or follow me on 
         <a href="https://linkedin.com/in/kevin-nguyen-dal" target="_blank" rel="noopener noreferrer" className="social-link">
