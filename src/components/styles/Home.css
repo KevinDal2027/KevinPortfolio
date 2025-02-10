@@ -1,0 +1,53 @@
+.home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .highlight {
+    color: #007bff;
+  }
+  .passion {
+    color: red;
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+  }
+  
+  .home-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+  
+  .learn-more {
+    font-weight: bold;
+  }
+  
+  .about-link {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .about-link:hover {
+    text-decoration: underline;
+  }
+  
+  .follow-me {
+    margin-top: 5px;
+  }
+  
+  .social-link {
+    margin: 0 5px;
+    color: #333;
+    font-size: 1.5rem;
+  }
+  
+  .social-link:hover {
+    color: #007bff;
+  }
+  *{
+    overflow-y: hidden;
+  }

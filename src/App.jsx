@@ -2,8 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import MyNavbar from './components/MyNavBar';
-import Header from './components/Header';
-import Contact from './components/Contact';
+import Home from './components/Home';
 import Projects from './components/Projects';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './components/About';
@@ -13,7 +12,7 @@ function App() {
     <Router>
       <MyNavbar />
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />}/>
       </Routes>

@@ -20,6 +20,7 @@ const Projects = () => {
   };
   return (
     <div className="projects-container">
+      <p className="text-center text-muted text-white">Click the image for more details</p>
       <Carousel className="project-carousel" interval={null}>
         <Carousel.Item >
            <Collapse in={open === 0}>
@@ -53,7 +54,7 @@ const Projects = () => {
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ChemAR</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-              ChemAR is a tool that helps students and educators explore complex molecular structures in an interactive AR environment, making chemistry concepts more accessible and engaging. It enhances learning by visualizing molecules in 3D, bridging the gap between theory and practice.
+              ChemAR is a tool that helps students and educators explore complex molecular structures in an interactive <a href='https://www.investopedia.com/terms/a/augmented-reality.asp' target='__blank'>AR environment</a>, making chemistry concepts more accessible and engaging. It enhances learning by visualizing molecules in 3D, bridging the gap between theory and practice.
               <div class = "skillsWrap7" className='pb-5'>
                  <div class = "item_7 item1"><img alt = "NodeJS icon" width= "150px" src='src/assets/skills/NodeJS.svg' /></div>
                  <div class = "item_7 item2"><img alt = "ThreeJS icon" width= "150px" src='src/assets/skills/ThreeJS.svg' /></div>
@@ -104,7 +105,7 @@ const Projects = () => {
              <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Emission Vision (Algae Correlation)</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-              This project maps algal growth against CO2 emissions in Alberta to identify spatial correlations and trends.
+              This project maps algal growth against <a href="https://www.statista.com/statistics/481142/greenhouse-gas-emissions-in-canada-by-province" target='__blank'>CO2 emissions in Alberta</a> to identify spatial correlations and trends.
                By leveraging geospatial data, it provides insights into algae's potential role in carbon sequestration, 
                supporting environmental research and policy development.
                 <div class="skillsWrap6" className="pb-5">
@@ -207,7 +208,7 @@ const Projects = () => {
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Emotion Analysis and Prediction</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-              This emotion analysis and prediction project uses NLP techniques to analyze text and predict emotions with machine learning models. 
+              This emotion analysis and prediction project uses <a href='https://realpython.com/natural-language-processing-spacy-python/' target='__blank'>NLP techniques</a> to analyze text and predict emotions with machine learning models. 
               It uses spaCy for processing, Matplotlib and pandas for visualization, and evaluates models like Linear Regression and Decision Trees for accuracy.
               <div class="skillsWrap6" className="pb-5">
                   <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="src/assets/skills/Python.svg" /></div>
@@ -242,7 +243,7 @@ const Projects = () => {
                 <div class ="theDescription">
                   <h4>Project Inspiration:</h4>
                   <p>In the Global Game Jam 2025, when the theme was published that we had to make a game based on "Bubble".
-                    I thought, "Bubble?" close enough to Michael Buble. And it was snowing outside, so our plan was made. We executed the plan and made a game where you have to escape Michael Buble's bubble gum factory.
+                    And it was snowing outside, so our plan was made. We executed the plan and made a game where you have to escape Michael Buble's bubble gum factory.
                   </p>
                   
                   <h4>Project Timeline:</h4>
@@ -338,7 +339,7 @@ const Projects = () => {
                   </p>
                   
                   <h4>Project Timeline:</h4>
-                  <p>I think I started February 6, 2025 so it's been {realTime} days from now actually.</p>
+                  <p>I think I started February 6, 2025. So it has been {realTime} days from now actually.</p>
 
                   <h4>What I Learned:</h4>
                   <p>Making a website about yourself professionally is kinda fun! I get to be so CREATIVEEEE!!!</p>

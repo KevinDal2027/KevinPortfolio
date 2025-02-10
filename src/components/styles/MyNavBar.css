@@ -6,12 +6,12 @@
     }
   
     #dark-mode-icon {
-      width: 25px;
+      width: 60px;
       height: auto;
       /* display: none; */
     }
     #toggle-icon {
-      width: 30px;
+      width: 40px;
       height: auto;
     }
   }

@@ -155,6 +155,7 @@ button.btn-light:hover {
 @media (max-width: 600px) {
   .projects-container {
     max-width: 100vw;
+    padding: 0;
   }
 
   .project-card .card-text,
@@ -166,21 +167,6 @@ button.btn-light:hover {
   }
   .projectImg {
     max-width: 100%;
-  }
-  #myLogo {
-    width: 75px;
-    height: auto;
-    /* display: none; */
-  }
-
-  #dark-mode-icon {
-    width: 25px;
-    height: auto;
-    /* display: none; */
-  }
-  #toggle-icon {
-    width: 30px;
-    height: auto;
   }
   #chemARpng{
     display: block !important;

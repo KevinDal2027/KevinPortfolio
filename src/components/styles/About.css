@@ -1,0 +1,55 @@
+.clickable-text {
+    text-decoration: underline;
+    color: green;
+    cursor: pointer;
+  }
+  
+  .image-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1000;
+    color: white;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .image-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-gallery img {
+    max-width: 85vw;
+    padding-top: 40px;
+    border-radius: 5px;
+  }
+  .container{
+    width: 85%;
+  }
+
+  @media screen and (min-width: 600px) {
+    .container {
+      width: 60%;
+      justify-content: space-around;
+      align-self: center;
+    }
+    .container p {
+        font-size: 1.4rem;
+    }
+  }
