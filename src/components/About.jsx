@@ -21,16 +21,16 @@ const About = () => {
         </em>
         <br/><br/>
         One of the first thing that I grew so much passion for is &shy;
-        <span className="clickable-text" onClick={() => toggleImages('src/assets/lifestyles/basketball.svg')}>basketball</span>, 
+        <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/basketball.svg')}>basketball</span>, 
         and honestly basketball has taught me so much, it shaped my mindset and discipline that I now apply to many areas in my life. 
         <br/><br/>I also love &shy;
-        <span className="clickable-text" onClick={() => toggleImages('src/assets/lifestyles/travel.svg')}>traveling</span>, 
+        <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/travel.svg')}>traveling</span>, 
         discovering new places and meeting people from different backgrounds. There are so many places that I want to travel to, with the mindset that I can learn from everyone I meet.
         <br/><br/>This is also some new passions I have developed recently. &shy;
-        <span className="clickable-text" onClick={() => toggleImages('src/assets/lifestyles/coding.svg')}>HACKATHONS!</span> 
+        <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/coding.svg')}>HACKATHONS!</span> 
         &shy; I learned so much everytime I participate in a hackathon, from coding to team work, and I am always looking forward to the next one.
         <br/><br/>When I'm not coding, you can find me doing things like skating, sightseeing, eating... &shy;
-        <span className="clickable-text" onClick={() => toggleImages('src/assets/lifestyles/outside.png')}>Outdoor</span>.
+        <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/outside.png')}>Outdoor</span>.
       </p>
 
       {showImages && (
