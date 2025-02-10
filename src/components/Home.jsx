@@ -23,6 +23,10 @@ const Home = () => {
         <a href="https://github.com/KevinDal2027" target="_blank" rel="noopener noreferrer" className="social-link">
           <FaGithub />
         </a>
+        or reach out to me at &shy;
+        <a href="mailto:kevinhao710@Outlook.com" className="email-link">
+          kevinhao710@outlook.com
+        </a>
       </p>
     </div>
   );

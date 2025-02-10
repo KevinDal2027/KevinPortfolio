@@ -49,20 +49,20 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-            <Card.Img class = "projectImg" id = "chemARpng" variant="top" alt ="ChemAR png" src="src/assets/projectThumbnails/ChemAR.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/>
-            <Card.Img class = "projectImg" id = "chemARgif" variant="top" alt ="ChemAR gif" src="src/assets/projectThumbnails/ChemAR.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+            <Card.Img class = "projectImg" id = "chemARpng" variant="top" alt ="ChemAR png" src="./assets/projectThumbnails/ChemAR.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/>
+            <Card.Img class = "projectImg" id = "chemARgif" variant="top" alt ="ChemAR gif" src="./assets/projectThumbnails/ChemAR.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ChemAR</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
               ChemAR is a tool that helps students and educators explore complex molecular structures in an interactive <a href='https://www.investopedia.com/terms/a/augmented-reality.asp' target='__blank'>AR environment</a>, making chemistry concepts more accessible and engaging. It enhances learning by visualizing molecules in 3D, bridging the gap between theory and practice.
               <div class = "skillsWrap7" className='pb-5'>
-                 <div class = "item_7 item1"><img alt = "NodeJS icon" width= "150px" src='src/assets/skills/NodeJS.svg' /></div>
-                 <div class = "item_7 item2"><img alt = "ThreeJS icon" width= "150px" src='src/assets/skills/ThreeJS.svg' /></div>
-                 <div class = "item_7 item3"><img alt = "EJS icon" width= "150px" src='src/assets/skills/EJS.svg' /></div>
-                 <div class = "item_7 item4"><img alt = "jQuery icon" width= "150px" src='src/assets/skills/jQuery.svg' /></div>
-                 <div class = "item_7 item5"><img alt = "Agile icon" width= "150px" src='src/assets/skills/Agile.svg' /></div>
-                 <div class = "item_7 item6"><img alt = "REST icon" width= "150px" src='src/assets/skills/REST.svg' /></div>
-                 <div class = "item_7 item7"><img alt = "JIRA icon" width= "150px" src='src/assets/skills/JIRA.svg' /></div>
+                 <div class = "item_7 item1"><img alt = "NodeJS icon" width= "150px" src='./assets/skills/NodeJS.svg' /></div>
+                 <div class = "item_7 item2"><img alt = "ThreeJS icon" width= "150px" src='./assets/skills/ThreeJS.svg' /></div>
+                 <div class = "item_7 item3"><img alt = "EJS icon" width= "150px" src='./assets/skills/EJS.svg' /></div>
+                 <div class = "item_7 item4"><img alt = "jQuery icon" width= "150px" src='./assets/skills/jQuery.svg' /></div>
+                 <div class = "item_7 item5"><img alt = "Agile icon" width= "150px" src='./assets/skills/Agile.svg' /></div>
+                 <div class = "item_7 item6"><img alt = "REST icon" width= "150px" src='./assets/skills/REST.svg' /></div>
+                 <div class = "item_7 item7"><img alt = "JIRA icon" width= "150px" src='./assets/skills/JIRA.svg' /></div>
                </div>
               </Card.Text>
               <Button className="w-50 mb-4 mt-1 mx-auto d-block" variant="light" href="https://dalchemar.azurewebsites.net/" target="_blank">
@@ -92,11 +92,11 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-            <Card.Img class = "projectImg" id = "visionPNG" variant="top" alt ="Emission Vision png" src="src/assets/projectThumbnails/CO2Vision.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/>
+            <Card.Img class = "projectImg" id = "visionPNG" variant="top" alt ="Emission Vision png" src="./assets/projectThumbnails/CO2Vision.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/>
             <Card.Img
               variant="top"
               alt="Emission Vision gif"
-              src="src/assets/projectThumbnails/CO2Vision.gif"
+              src="./assets/projectThumbnails/CO2Vision.gif"
               className="img-fluid" 
               style={{ maxHeight: '450px', objectFit: 'cover', cursor: 'pointer' }}
               onClick={() => toggleCollapse(0)}
@@ -109,12 +109,12 @@ const Projects = () => {
                By leveraging geospatial data, it provides insights into algae's potential role in carbon sequestration, 
                supporting environmental research and policy development.
                 <div class="skillsWrap6" className="pb-5">
-                  <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="src/assets/skills/Python.svg" /></div>
-                  <div class="item_6 item2_6"><img alt="Flask icon" width="150px" src="src/assets/skills/Flask.svg" /></div>
-                  <div class="item_6 item3_6"><img alt="Folium icon" width="150px" src="src/assets/skills/Folium.svg" /></div>
-                  <div class="item_6 item4_6"><img alt="mySQL icon" width="150px" src="src/assets/skills/mySQL.svg" /></div>
-                  <div class="item_6 item5_6"><img alt="Bootstrap icon" width="150px" src="src/assets/skills/Bootstrap.svg" /></div>
-                  <div class="item_6 item6_6"><img alt="JSON icon" width="150px" src="src/assets/skills/JSON.svg" /></div>
+                  <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="./assets/skills/Python.svg" /></div>
+                  <div class="item_6 item2_6"><img alt="Flask icon" width="150px" src="./assets/skills/Flask.svg" /></div>
+                  <div class="item_6 item3_6"><img alt="Folium icon" width="150px" src="./assets/skills/Folium.svg" /></div>
+                  <div class="item_6 item4_6"><img alt="mySQL icon" width="150px" src="./assets/skills/mySQL.svg" /></div>
+                  <div class="item_6 item5_6"><img alt="Bootstrap icon" width="150px" src="./assets/skills/Bootstrap.svg" /></div>
+                  <div class="item_6 item6_6"><img alt="JSON icon" width="150px" src="./assets/skills/JSON.svg" /></div>
                 </div>
               </Card.Text>
                 <div className="d-flex justify-content-center gap-2">
@@ -154,8 +154,8 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-          <Card.Img variant="top" id = "clearCalSVG" alt ="ClearCalAI svg" src="src/assets/projectThumbnails/ClearCal.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/>
-            <Card.Img variant="top" id = "clearCalGIF" alt ="ClearCalAI gif" src="src/assets/projectThumbnails/ClearCal.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+          <Card.Img variant="top" id = "clearCalSVG" alt ="ClearCalAI svg" src="./assets/projectThumbnails/ClearCal.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/>
+            <Card.Img variant="top" id = "clearCalGIF" alt ="ClearCalAI gif" src="./assets/projectThumbnails/ClearCal.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ClearCal AI (Lesser Stress for Best)</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
@@ -163,13 +163,13 @@ const Projects = () => {
               reducing user's stress by helping them manage their time more effectively.
               It features speech-to-text input to generate detailed action plans to streamline productivity. 
               <div class = "skillsWrap7" className='pb-5'>
-                 <div class = "item_7 item1"><img alt = "React icon" width= "150px" src='src/assets/skills/React.js.svg' /></div>
-                 <div class = "item_7 item2"><img alt = "NodeJS icon" width= "150px" src='src/assets/skills/NodeJS.svg' /></div>
-                 <div class = "item_7 item3"><img alt = "Bootstrap icon" width= "150px" src='src/assets/skills/Bootstrap.svg' /></div>
-                 <div class = "item_7 item4"><img alt = "JavaScript icon" width= "150px" src='src/assets/skills/JavaScript.svg' /></div>
-                 <div class = "item_7 item5"><img alt = "Vite icon" width= "150px" src='src/assets/skills/Vite.svg' /></div>
-                 <div class = "item_7 item6"><img alt = "GeminiAI icon" width= "150px" src='src/assets/skills/gemini.svg' /></div>
-                 <div class = "item_7 item7"><img alt = "GoogleCalendar icon" width= "150px" src='src/assets/skills/GoogleCal.svg' /></div>
+                 <div class = "item_7 item1"><img alt = "React icon" width= "150px" src='./assets/skills/React.js.svg' /></div>
+                 <div class = "item_7 item2"><img alt = "NodeJS icon" width= "150px" src='./assets/skills/NodeJS.svg' /></div>
+                 <div class = "item_7 item3"><img alt = "Bootstrap icon" width= "150px" src='./assets/skills/Bootstrap.svg' /></div>
+                 <div class = "item_7 item4"><img alt = "JavaScript icon" width= "150px" src='./assets/skills/JavaScript.svg' /></div>
+                 <div class = "item_7 item5"><img alt = "Vite icon" width= "150px" src='./assets/skills/Vite.svg' /></div>
+                 <div class = "item_7 item6"><img alt = "GeminiAI icon" width= "150px" src='./assets/skills/gemini.svg' /></div>
+                 <div class = "item_7 item7"><img alt = "GoogleCalendar icon" width= "150px" src='./assets/skills/GoogleCal.svg' /></div>
                </div>
               </Card.Text>
               <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/genaihackathon" target="_blank">
@@ -204,19 +204,19 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-            <Card.Img variant="top" alt ="Emotion Analysis gif" src="src/assets/projectThumbnails/Emotion.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+            <Card.Img variant="top" alt ="Emotion Analysis gif" src="./assets/projectThumbnails/Emotion.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Emotion Analysis and Prediction</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
               This emotion analysis and prediction project uses <a href='https://realpython.com/natural-language-processing-spacy-python/' target='__blank'>NLP techniques</a> to analyze text and predict emotions with machine learning models. 
               It uses spaCy for processing, Matplotlib and pandas for visualization, and evaluates models like Linear Regression and Decision Trees for accuracy.
               <div class="skillsWrap6" className="pb-5">
-                  <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="src/assets/skills/Python.svg" /></div>
-                  <div class="item_6 item2_6"><img alt="Flask icon" width="150px" src="src/assets/skills/Flask.svg" /></div>
-                  <div class="item_6 item3_6"><img alt="Matplotlib icon" width="150px" src="src/assets/skills/matplotlib.svg" /></div>
-                  <div class="item_6 item4_6"><img alt="Pandas icon" width="150px" src="src/assets/skills/Pandas.svg" /></div>
-                  <div class="item_6 item5_6"><img alt="Scikit-learn icon" width="150px" src="src/assets/skills/scikit.svg" /></div>
-                  <div class="item_6 item6_6"><img alt="Spacy icon" width="150px" src="src/assets/skills/Spacy.svg" /></div>
+                  <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="./assets/skills/Python.svg" /></div>
+                  <div class="item_6 item2_6"><img alt="Flask icon" width="150px" src="./assets/skills/Flask.svg" /></div>
+                  <div class="item_6 item3_6"><img alt="Matplotlib icon" width="150px" src="./assets/skills/matplotlib.svg" /></div>
+                  <div class="item_6 item4_6"><img alt="Pandas icon" width="150px" src="./assets/skills/Pandas.svg" /></div>
+                  <div class="item_6 item5_6"><img alt="Scikit-learn icon" width="150px" src="./assets/skills/scikit.svg" /></div>
+                  <div class="item_6 item6_6"><img alt="Spacy icon" width="150px" src="./assets/skills/Spacy.svg" /></div>
                 </div>
               </Card.Text>
               <div className="d-flex justify-content-center gap-2">
@@ -255,15 +255,15 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-          <Card.Img variant="top" id = "bublePNG"alt ="Escape Room png" src="src/assets/projectThumbnails/buble.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/>
-          <Card.Img variant="top" id = "bubleGIF"alt ="Escape Room gif" src="src/assets/projectThumbnails/buble.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+          <Card.Img variant="top" id = "bublePNG"alt ="Escape Room png" src="./assets/projectThumbnails/buble.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/>
+          <Card.Img variant="top" id = "bubleGIF"alt ="Escape Room gif" src="./assets/projectThumbnails/buble.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Escape Room (Global Game Jam 2025)</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
               Escape Michael Bublé’s bubble gum factory in this quirky Unity game! Use bubble gum to float, dodge hazards, and reach the exit before running out or getting caught.
               <div class="skills2" className="pt-4 d-flex justify-content-around">
-                  <div><img alt="Unity icon" width="150px" src="src/assets/skills/unity.svg" /></div>
-                  <div><img alt="C# icon" width="150px" src="src/assets/skills/CSharp.svg" /></div>
+                  <div><img alt="Unity icon" width="150px" src="./assets/skills/unity.svg" /></div>
+                  <div><img alt="C# icon" width="150px" src="./assets/skills/CSharp.svg" /></div>
                 </div>
               </Card.Text>
               <div className="d-flex justify-content-center gap-2">
@@ -295,7 +295,7 @@ const Projects = () => {
                   </p>
                   
                   <h4>Project Timeline:</h4>
-                  <p>Developed in May 2024 during the 2 weeks (some days with 4-5 hours of sleep) :((</p>
+                  <p>Developed in May 2024 during the 2 weeks.</p>
 
                   <h4>What I Learned:</h4>
                   <p>That was my first time actually making a project in Java. I learned so much about different types of Java Framework and having to play around with .NET was really fascinating.</p>
@@ -303,18 +303,18 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-            <Card.Img variant="top" alt ="Weather App gif" src="src/assets/projectThumbnails/Weather.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+            <Card.Img variant="top" alt ="Weather App gif" src="./assets/projectThumbnails/Weather.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Weather App</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
               A Java Swing GUI app that retrieves and displays real-time weather data from OpenWeatherAPI. It integrates JSON parsing and HTTP connection handling to ensure accurate and reliable weather updates, providing users with a seamless experience.
               <div class="skillsWrap6" className="pb-5">
-                  <div class="item_6 item1_6"><img alt="Java icon" width="150px" src="src/assets/skills/Java.svg" /></div>
-                  <div class="item_6 item2_6"><img alt="Java Swing icon" width="150px" src="src/assets/skills/Swing.svg" /></div>
-                  <div class="item_6 item3_6"><img alt="Java Net icon" width="150px" src="src/assets/skills/Net.svg" /></div>
-                  <div class="item_6 item4_6"><img alt="JSON icon" width="150px" src="src/assets/skills/JSON.svg" /></div>
-                  <div class="item_6 item5_6"><img alt="OpenWeatherAPI icon" width="150px" src="src/assets/skills/openAPI.svg" /></div>
-                  <div class="item_6 item6_6"><img alt="REST icon" width="150px" src="src/assets/skills/REST.svg" /></div>
+                  <div class="item_6 item1_6"><img alt="Java icon" width="150px" src="./assets/skills/Java.svg" /></div>
+                  <div class="item_6 item2_6"><img alt="Java Swing icon" width="150px" src="./assets/skills/Swing.svg" /></div>
+                  <div class="item_6 item3_6"><img alt="Java Net icon" width="150px" src="./assets/skills/Net.svg" /></div>
+                  <div class="item_6 item4_6"><img alt="JSON icon" width="150px" src="./assets/skills/JSON.svg" /></div>
+                  <div class="item_6 item5_6"><img alt="OpenWeatherAPI icon" width="150px" src="./assets/skills/openAPI.svg" /></div>
+                  <div class="item_6 item6_6"><img alt="REST icon" width="150px" src="./assets/skills/REST.svg" /></div>
                 </div>
               </Card.Text>
               <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/WeatherAppJava" target="_blank">
@@ -347,21 +347,20 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-            <Card.Img variant="top" alt ="ChemAR gif" src="src/assets/projectThumbnails/KEVINWEB.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+            <Card.Img variant="top" alt ="ChemAR gif" src="./assets/projectThumbnails/KEVINWEB.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Portfolio Website</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
               Well... You are on it right now!!! I don't think I need description for this one. Check it out for yourself!!!
               Click on About to find out more about me, Projects to see my work, and maybe checkout my LinkedIn and GitHub.
               
-              <div class = "skillsWrap7" className='pb-5'>
-                 <div class = "item_7 item1"><img alt = "React JS icon" width= "150px" src='src/assets/skills/React.js.svg' /></div>
-                 <div class = "item_7 item2"><img alt = "Bootstrap icon" width= "150px" src='src/assets/skills/Bootstrap.svg' /></div>
-                 <div class = "item_7 item3"><img alt = "Vite icon" width= "150px" src='src/assets/skills/Vite.svg' /></div>
-                 <div class = "item_7 item4"><img alt = "HTML icon" width= "150px" src='src/assets/skills/HTML.svg' /></div>
-                 <div class = "item_7 item5"><img alt = "CSS icon" width= "150px" src='src/assets/skills/CSS.svg' /></div>
-                 <div class = "item_7 item6"><img alt = "JavaScript icon" width= "150px" src='src/assets/skills/JavaScript.svg' /></div>
-                 <div class = "item_7 item7"><img alt = "JIRA icon" width= "150px" src='src/assets/skills/JIRA.svg' /></div>
+              <div class = "skillsWrap6" className='pb-5'>
+                 <div class = "item_6 item1_6"><img alt = "React JS icon" width= "150px" src='./assets/skills/React.js.svg' /></div>
+                 <div class = "item_6 item2_6"><img alt = "Bootstrap icon" width= "150px" src='./assets/skills/Bootstrap.svg' /></div>
+                 <div class = "item_6 item3_6"><img alt = "Vite icon" width= "150px" src='./assets/skills/Vite.svg' /></div>
+                 <div class = "item_6 item4_6"><img alt = "HTML icon" width= "150px" src='./assets/skills/HTML.svg' /></div>
+                 <div class = "item_6 item5_6"><img alt = "CSS icon" width= "150px" src='./assets/skills/CSS.svg' /></div>
+                 <div class = "item_6 item6_6"><img alt = "JavaScript icon" width= "150px" src='./assets/skills/JavaScript.svg' /></div>
                </div>
               </Card.Text>
               <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/KevinPortfolio" target="_blank">
