@@ -89,7 +89,7 @@ const MyNavbar = () => {
             <Home />
             <Nav.Link as={Link} to="/about" className="fs-5" onClick={handleSelect}>ABOUT</Nav.Link>
             <Nav.Link as={Link} to="/projects" className="fs-5" onClick={handleSelect}>PROJECTS</Nav.Link>
-            <Nav className="d-flex justfiy-content-center align-items-center ms-auto">
+            <Nav className="d-flex justify-content-center align-items-center ms-auto">
             <Nav.Link href="https://github.com/KevinDal2027" target="_blank" rel="noopener noreferrer" className="align-items-center">
             <FaGithub size={35}/>
             </Nav.Link>

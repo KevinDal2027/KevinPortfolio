@@ -20,7 +20,7 @@ const Projects = () => {
   };
   return (
     <div className="projects-container">
-      <p className="text-center text-muted text-white">Click the image for more details</p>
+      <p className="text-center text-muted text-white fw-bold fs-5">Click the image for more details</p>
       <Carousel className="project-carousel" interval={null}>
         <Carousel.Item >
            <Collapse in={open === 0}>
@@ -199,7 +199,7 @@ const Projects = () => {
                   <p>Implemented machine learning models (Linear Regression and DecisionTreeClassifier) to predict models, using NLP technique through spaCy.</p>
                   
                   <h4>What's Next:</h4>
-                  <p>I am planning to add emotion recognition through speech as well. Then validatation with AI for accurate emotion.</p>
+                  <p>I am planning to add emotion recognition through speech as well. Then validation with AI for accurate emotion.</p>
                 </div>
               </div>
             </Collapse>
@@ -224,53 +224,6 @@ const Projects = () => {
                     View Website
                   </Button>
                   <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/TextToEmotionPredictionModel" target="_blank">
-                    Visit on GitHub
-                  </Button>
-                </div>
-            </Card.Body>
-          </Card>
-        </Carousel.Item>
-        <Carousel.Item >
-          <Collapse in={open === 0}>
-              <div className="project-details text-white p-3">
-                <Button
-                  onClick={() => toggleCollapse(null)}
-                  class="close-button"
-                  variant="danger"
-                >
-                  X
-                </Button>
-                <div class ="theDescription">
-                  <h4>Project Inspiration:</h4>
-                  <p>In the Global Game Jam 2025, when the theme was published that we had to make a game based on "Bubble".
-                    And it was snowing outside, so our plan was made. We executed the plan and made a game where you have to escape Michael Buble's bubble gum factory.
-                  </p>
-                  
-                  <h4>Project Timeline:</h4>
-                  <p>Developed in January 2025 during the 48 hours Global Game Jam in a team of 3.</p>
-
-                  <h4>What I Learned:</h4>
-                  <p>That was my first time actually making a game. Although, I had to learn C# to make game mechanic scripts, it was very easy to pick up since it is so similar to Java. I had so much fun designing meshes and animations.</p>
-                </div>
-              </div>
-            </Collapse>
-          <Card className="project-card">
-          {/* <Card.Img variant="top" id = "bublePNG"alt ="Escape Room png" src="./assets/projectThumbnails/buble.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/> */}
-          <Card.Img variant="top" id = "bubleGIF"alt ="Escape Room gif" src="./assets/projectThumbnails/buble.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
-            <Card.Body>
-              <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Escape Room (Global Game Jam 2025)</Card.Title>
-              <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-              Escape Michael Bublé’s bubble gum factory in this quirky Unity game! Use bubble gum to float, dodge hazards, and reach the exit before running out or getting caught.
-              <div class="skills2" className="pt-4 d-flex justify-content-around">
-                  <div><img alt="Unity icon" width="150px" src="./assets/skills/unity.svg" /></div>
-                  <div><img alt="C# icon" width="150px" src="./assets/skills/CSharp.svg" /></div>
-                </div>
-              </Card.Text>
-              <div className="d-flex justify-content-center gap-2">
-                  <Button className="w-50 mb-4 mt-1" variant="light" href="https://perfectoctogon.itch.io/escape-michael-bubles-bubblegum-factory" target="_blank">
-                    Play Game Now
-                  </Button>
-                  <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/GlobalGamejam2025" target="_blank">
                     Visit on GitHub
                   </Button>
                 </div>
@@ -335,14 +288,61 @@ const Projects = () => {
                 </Button>
                 <div class ="theDescription">
                   <h4>Project Inspiration:</h4>
+                  <p>In the Global Game Jam 2025, when the theme was published that we had to make a game based on "Bubble".
+                    And it was snowing outside, so our plan was made. We executed the plan and made a game where you have to escape Michael Buble's bubble gum factory.
+                  </p>
+                  
+                  <h4>Project Timeline:</h4>
+                  <p>Developed in January 2025 during the 48 hours Global Game Jam in a team of 3.</p>
+
+                  <h4>What I Learned:</h4>
+                  <p>That was my first time actually making a game. Although, I had to learn C# to make game mechanic scripts, it was very easy to pick up since it is so similar to Java. I had so much fun designing meshes and animations.</p>
+                </div>
+              </div>
+            </Collapse>
+          <Card className="project-card">
+          {/* <Card.Img variant="top" id = "bublePNG"alt ="Escape Room png" src="./assets/projectThumbnails/buble.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/> */}
+          <Card.Img variant="top" id = "bubleGIF"alt ="Escape Room gif" src="./assets/projectThumbnails/buble.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+            <Card.Body>
+              <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Escape Room (Global Game Jam 2025)</Card.Title>
+              <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+              Escape Michael Bublé’s bubble gum factory in this quirky Unity game! Use bubble gum to float, dodge hazards, and reach the exit before running out or getting caught.
+              <div class="skills2" className="pt-4 d-flex justify-content-around">
+                  <div><img alt="Unity icon" width="150px" src="./assets/skills/unity.svg" /></div>
+                  <div><img alt="C# icon" width="150px" src="./assets/skills/CSharp.svg" /></div>
+                </div>
+              </Card.Text>
+              <div className="d-flex justify-content-center gap-2">
+                  <Button className="w-50 mb-4 mt-1" variant="light" href="https://perfectoctogon.itch.io/escape-michael-bubles-bubblegum-factory" target="_blank">
+                    Play Game Now
+                  </Button>
+                  <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/GlobalGamejam2025" target="_blank">
+                    Visit on GitHub
+                  </Button>
+                </div>
+            </Card.Body>
+          </Card>
+        </Carousel.Item>
+        <Carousel.Item >
+          <Collapse in={open === 0}>
+              <div className="project-details text-white p-3">
+                <Button
+                  onClick={() => toggleCollapse(null)}
+                  class="close-button"
+                  variant="danger"
+                >
+                  X
+                </Button>
+                <div class ="theDescription">
+                  <h4>Project Inspiration:</h4>
                   <p>Literally everyone had a website to show off their projects. So I thought, "I should make one too". And here we are.
                   </p>
                   
                   <h4>Project Timeline:</h4>
-                  <p>I think I started February 6, 2025. So it has been {realTime} days from now actually.</p>
+                  <p>I started February 6, 2025. So it has been {realTime} days from now actually.</p>
 
                   <h4>What I Learned:</h4>
-                  <p>Making a website about yourself professionally is kinda fun! I get to be so CREATIVEEEE!!!</p>
+                  <p>Making a website about yourself professionally is kinda fun! I get to be so creative!!!</p>
                 </div>
               </div>
             </Collapse>
