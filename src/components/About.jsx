@@ -9,33 +9,47 @@ const About = () => {
   const toggleImages = (imagePath) => {
     setCurrentImage(imagePath);
     setShowImages(!showImages);
+    document.getElementById("aboutcontent").classList.toggle("blurring");
   };
 
+  const closeImages = () => {
+    setShowImages(false);
+    document.getElementById("aboutcontent").classList.remove("blurring");
+  }
   return (
-    <div className="container border border-2 border-dark p-3">
-      <h1 className='text-center'>About Me</h1>
-      <p>
-        Originally from Vietnam, I moved to Canada about 8 years ago. 
-        Most of my life, I have been passionate about trying new things and learn new skills.
-        <br/><br/><em>Also, try clicking on those links.
-        </em>
-        <br/><br/>
-        One of the first thing that I grew so much passion for is &shy;
-        <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/basketball.svg')}>basketball</span>, 
-        and honestly basketball has taught me so much, it shaped my mindset and discipline that I now apply to many areas in my life. 
-        <br/><br/>I also love &shy;
-        <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/travel.svg')}>traveling</span>, 
-        discovering new places and meeting people from different backgrounds. There are so many places that I want to travel to, with the mindset that I can learn from everyone I meet.
-        <br/><br/>This is also some new passions I have developed recently. &shy;
-        <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/coding.svg')}>HACKATHONS!</span> 
-        &shy; I learned so much everytime I participate in a hackathon, from coding to team work, and I am always looking forward to the next one.
-        <br/><br/>When I'm not coding, you can find me doing things like skating, sightseeing, eating... &shy;
-        <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/outside.png')}>Outdoor</span>.
-      </p>
+    <div className="d-flex flex-column container border border-2 border-dark p-3 h-100">
+      <h1 className='text-center border border-5 rounded-bottom rounded-top'>About Me</h1>
+      <div id='aboutcontent'>
+        <p>
+          Originally from Vietnam, I moved to Canada about 8 years ago. 
+          Most of my life, I have been passionate about trying new things and learn new skills.
+          <br/>
+          <em>Also, click on those links to see images.</em>
+        </p>
+        <p>
+          One of the first thing that I grew so much passion for is &shy;
+          <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/basketball.svg')}>basketball</span>, 
+          and honestly basketball has taught me so much, it shaped my mindset and discipline that I now apply to many areas in my life. 
+        </p>
+        <p> 
+          I also love &shy;
+          <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/travel.svg')}>traveling</span>, 
+          discovering new places and meeting people from different backgrounds. There are so many places that I want to travel to, with the mindset that I can learn from everyone I meet.
+        </p>
+        <p>
+          This is also some new passions I have developed recently. &shy;
+          <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/coding.svg')}>HACKATHONS!</span> 
+          &shy; I learned so much everytime I participate in a hackathon, from coding to team work, and I am always looking forward to the next one.
+        </p>
+        <p>
+          When I'm not coding, you can find me doing things like skating, sightseeing, eating... &shy;
+          <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/outside.png')}>Outdoor</span>.
+        </p>
+      </div>
 
       {showImages && (
         <div className="image-popup">
-          <button className="close-button" onClick={() => setShowImages(false)}>X</button>
+          <button className="close-button" onClick={() => closeImages()}>X</button>
           <div className="image-gallery">
             <LazyLoad height={200} offset={100}>
               <img src={currentImage} alt="Lifestyle" />
