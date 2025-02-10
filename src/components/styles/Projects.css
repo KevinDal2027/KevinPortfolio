@@ -164,7 +164,7 @@ button.btn-light:hover {
   .projectImg {
     max-width: 100%;
   }
-  #chemARpng{
+  /* #chemARpng{
     display: block !important;
   }
   #chemARgif{
@@ -187,5 +187,5 @@ button.btn-light:hover {
   }
   #clearCalGIF{
     display: none;
-  }
+  } */
 }

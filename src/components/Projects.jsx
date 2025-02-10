@@ -49,7 +49,7 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-            <Card.Img class = "projectImg" id = "chemARpng" variant="top" alt ="ChemAR png" src="./assets/projectThumbnails/ChemAR.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/>
+            {/* <Card.Img class = "projectImg" id = "chemARpng" variant="top" alt ="ChemAR png" src="./assets/projectThumbnails/ChemAR.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/> */}
             <Card.Img class = "projectImg" id = "chemARgif" variant="top" alt ="ChemAR gif" src="./assets/projectThumbnails/ChemAR.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ChemAR</Card.Title>
@@ -92,7 +92,7 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-            <Card.Img class = "projectImg" id = "visionPNG" variant="top" alt ="Emission Vision png" src="./assets/projectThumbnails/CO2Vision.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/>
+            {/* <Card.Img class = "projectImg" id = "visionPNG" variant="top" alt ="Emission Vision png" src="./assets/projectThumbnails/CO2Vision.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/> */}
             <Card.Img
               variant="top"
               alt="Emission Vision gif"
@@ -154,7 +154,7 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-          <Card.Img variant="top" id = "clearCalSVG" alt ="ClearCalAI svg" src="./assets/projectThumbnails/ClearCal.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/>
+          {/* <Card.Img variant="top" id = "clearCalSVG" alt ="ClearCalAI svg" src="./assets/projectThumbnails/ClearCal.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/> */}
             <Card.Img variant="top" id = "clearCalGIF" alt ="ClearCalAI gif" src="./assets/projectThumbnails/ClearCal.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ClearCal AI (Lesser Stress for Best)</Card.Title>
@@ -255,7 +255,7 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-          <Card.Img variant="top" id = "bublePNG"alt ="Escape Room png" src="./assets/projectThumbnails/buble.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/>
+          {/* <Card.Img variant="top" id = "bublePNG"alt ="Escape Room png" src="./assets/projectThumbnails/buble.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/> */}
           <Card.Img variant="top" id = "bubleGIF"alt ="Escape Room gif" src="./assets/projectThumbnails/buble.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Escape Room (Global Game Jam 2025)</Card.Title>
@@ -347,7 +347,7 @@ const Projects = () => {
               </div>
             </Collapse>
           <Card className="project-card">
-            <Card.Img variant="top" alt ="ChemAR gif" src="./assets/projectThumbnails/KEVINWEB.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+            <Card.Img variant="top" alt ="Kevin Web gif" src="./assets/projectThumbnails/KEVINWEB.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
             <Card.Body>
               <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Portfolio Website</Card.Title>
               <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
