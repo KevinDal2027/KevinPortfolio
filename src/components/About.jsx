@@ -16,7 +16,7 @@ const About = () => {
       <h1 className='text-center'>About Me</h1>
       <p className=''>
         Originally from Vietnam, I moved to Canada about 8 years ago. 
-        Most of my life, I have been passionate about trying new things a learn new skills.
+        Most of my life, I have been passionate about trying new things and learn new skills.
         <br/><br/><em>Also, try clicking on those links.
         </em>
         <br/><br/>
