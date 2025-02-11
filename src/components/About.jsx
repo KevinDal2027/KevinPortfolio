@@ -48,14 +48,14 @@ const About = () => {
         <div class = "section coding">
           <p>
             This is also some new passions I have developed recently. &shy;
-            <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/coding.svg')}>Hackathons!</span> 
-            &shy; I learned so much every time I participate in a hackathon, from coding to team work, and I am always looking forward to the next one.
+            <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/coding.svg')}>Hackathons</span> 
+            ! I learned so much every time I participate in a hackathon, from coding to team work, and I am always looking forward to the next one.
           </p>
           </div>
         <div class = "section outdoor">
           <p>
-            When I'm not coding, you can find me doing things like skating, sightseeing, eating... &shy;
-            <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/outside.png')}>Outdoor</span>.
+            When I'm not coding, you can find me doing things like &shy;
+            <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/outside.png')}>skating, sightseeing, eating...</span>.
           </p>
         </div>
       </div>

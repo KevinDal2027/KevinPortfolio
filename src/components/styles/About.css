@@ -1,7 +1,12 @@
 .clickable-text {
     text-decoration: underline;
     color: green;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+  }
+.clickable-text:hover {
+    color: rgb(66, 1, 128);
+    text-decoration: none;
   }
   
   .image-popup {
@@ -50,7 +55,7 @@
   
   .section {
     text-align: center;
-    padding-block: 2rem;
+    padding-block: 1rem;
   }
 
   @media screen and (min-width: 600px) {
