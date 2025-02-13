@@ -44,14 +44,14 @@ const About = () => {
         <div class = "section travel">
           <p> 
             I also love &shy;
-            <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/travel.svg')}>traveling</span>, 
+            <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/travel.png')}>traveling</span>, 
             discovering new places and meeting people from different backgrounds. There are so many places that I want to travel to, with the mindset that I can learn from everyone I meet.
           </p>
         </div>
         <div class = "section coding">
           <p>
             This is also some new passions I have developed recently. &shy;
-            <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/coding.svg')}>Hackathons</span> 
+            <span className="clickable-text" onClick={() => toggleImages('./assets/lifestyles/coding.png')}>Hackathons</span> 
             ! I learned so much every time I participate in a hackathon, from coding to team work, and I am always looking forward to the next one.
           </p>
         </div>
