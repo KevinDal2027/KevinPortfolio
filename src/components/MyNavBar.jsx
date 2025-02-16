@@ -11,6 +11,7 @@ const MyNavbar = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle("dark-mode", !darkMode);
+    handleSelect();
   };
 
   const handleToggle = () => {
@@ -45,7 +46,7 @@ const MyNavbar = () => {
       className="heightClosed"
     >
       <Container className="d-flex justify-content-between mt-auto">
-        <Navbar.Brand as={Link} to="/" className="">
+        <Navbar.Brand as={Link} to="/" className="" onClick={handleSelect}>
           <img
             src="./kevinLogo.svg"
             alt="Kevin Nguyen"
