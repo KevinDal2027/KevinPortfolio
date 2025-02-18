@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import './styles/About.css';
+import { Nav } from 'react-bootstrap';
 
 const About = ({ darkMode }) => {
   const [showImages, setShowImages] = useState(false);
@@ -86,6 +87,7 @@ const About = ({ darkMode }) => {
                 <li>Web Developments, DevOps</li>
                 <li>.NET Framework in C#</li>
               </ul>
+              <Nav.Link className='clickable-text text-black' href='/Projects'>Click on this to see more skills in Project section</Nav.Link>
             </p>
           </div>
         );
