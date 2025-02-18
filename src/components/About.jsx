@@ -23,7 +23,6 @@ const About = ({ darkMode }) => {
       case 'background':
         return (
           <div>
-            <h2>Background</h2>
             <p>
             Originally from Vietnam, I moved to Canada eight years ago, embracing new experiences that have shaped my growth. I've always been passionate about exploring new opportunities, learning new skills, and pushing my boundaries. Whether through technology, creative projects, or problem-solving, I thrive on challenges that help me grow and adapt.
             </p>
@@ -77,7 +76,6 @@ const About = ({ darkMode }) => {
       case 'skills':
         return (
           <div>
-            <h2>Skills</h2>
             <p>
               Here are some of the skills I've developed over the years: 
               <ul>
