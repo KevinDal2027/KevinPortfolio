@@ -251,7 +251,7 @@ const Projects = () => {
                   <p>Developed in May 2024 during the 2 weeks.</p>
 
                   <h4>What I Learned:</h4>
-                  <p>That was my first time actually making a project in Java. I learned so much about different types of Java Framework and having to play around with .NET was really fascinating.</p>
+                  <p>That was my first time actually making a project in Java. I learned so much about different types of Java Framework and having to play around with Java.net for HTTP Connection was really fascinating.</p>
                 </div>
               </div>
             </Collapse>
