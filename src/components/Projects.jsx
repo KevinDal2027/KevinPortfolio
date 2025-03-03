@@ -178,6 +178,59 @@ const Projects = () => {
             </Card.Body>
           </Card>
         </Carousel.Item>
+
+        <Carousel.Item >
+          <Collapse in={open === 0}>
+              <div className="project-details text-white p-3">
+                <Button
+                  onClick={() => toggleCollapse(null)}
+                  class="close-button"
+                  variant="danger"
+                >
+                  X
+                </Button>
+                <div class ="theDescription">
+                  <h4>Project Inspiration:</h4>
+                  <p>I started this project to get hands-on experience with C# and explore the .NET ecosystem, specifically ASP.NET Core and Entity Framework Core. Building a Task Manager allowed me to understand backend development, API design, and database management while working with a structured framework. This project served as a practical way to apply my learning and improve my development skills in a real-world scenario.</p>
+                  
+                  <h4>Project Timeline:</h4>
+                  <p>Developed in January 2025 as a part of a personal learning initiative to enhance skills in ASP.NET Core, EF Core, and API development.
+                    </p>
+                  <h4>Accomplishments:</h4>
+                    <li>Built a Minimal API for seamless task management.</li>
+                    <li>Implemented task sorting by due date and priority.</li>
+                    <li>Strengthened knowledge of database management (EF Core) and backend development.</li>
+                  <br></br>
+                  <h4>What's Next:</h4>
+                  <p>Planning to enhance the project with task reminders, recurring tasks, and a front-end UI for a better user experience.</p>
+                </div>
+              </div>
+            </Collapse>
+          <Card className="project-card">
+          {/* <Card.Img variant="top" id = "clearCalSVG" alt ="ClearCalAI svg" src="./assets/projectThumbnails/ClearCal.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/> */}
+            <Card.Img variant="top" id = "clearCalGIF" alt ="ClearCalAI gif" src="./assets/projectThumbnails/taskManager.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+            <Card.Body>
+              <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Task Manager – ASP.NET Core & EF Core</Card.Title>
+              <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+              This is a lightweight and efficient task management app built with ASP.NET Core and EF Core, designed to help users organize and prioritize their tasks effortlessly. 
+              It features a clean API for seamless task creation, updates, and deletion, with automatic sorting by due date and priority. With a simple yet powerful interface, 
+              it streamlines productivity by keeping users focused and organized.
+              <div class="skillsWrap6" className="pb-5">
+                  <div class="item_6 item1_6"><img alt="C# icon" width="150px" src="./assets/skills/CSharp.svg" /></div>
+                  <div class="item_6 item2_6"><img alt="ASP.NET icon" width="150px" src="./assets/skills/ASP.svg" /></div>
+                  <div class="item_6 item3_6"><img alt="SQL icon" width="150px" src="./assets/skills/SQL.svg" /></div>
+                  <div class="item_6 item4_6"><img alt="HTML icon" width="150px" src="./assets/skills/HTML.svg" /></div>
+                  <div class="item_6 item5_6"><img alt="CSS icon" width="150px" src="./assets/skills/CSS.svg" /></div>
+                  <div class="item_6 item6_6"><img alt="JS icon" width="150px" src="./assets/skills/JavaScript.svg" /></div>
+              </div>
+              </Card.Text>
+              <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/TaskManager-.NET-Framework" target="_blank">
+                Visit on GitHub
+              </Button>
+            </Card.Body>
+          </Card>
+        </Carousel.Item>
+        
         <Carousel.Item >
           <Collapse in={open === 0}>
               <div className="project-details text-white p-3">
