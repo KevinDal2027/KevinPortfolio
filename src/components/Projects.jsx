@@ -172,9 +172,14 @@ const Projects = () => {
                  <div class = "item_7 item7"><img alt = "GoogleCalendar icon" width= "150px" src='./assets/skills/GoogleCal.svg' /></div>
                </div>
               </Card.Text>
-              <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/genaihackathon" target="_blank">
-                Visit on GitHub
-              </Button>
+              <div className="d-flex justify-content-center gap-2">
+                  <Button className="w-50 mb-4 mt-1" variant="light" href="https://clearcalai.vercel.app" target="_blank">
+                    Visit Website
+                  </Button>
+                  <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/genaihackathon" target="_blank">
+                    Visit on GitHub
+                  </Button>
+                </div>
             </Card.Body>
           </Card>
         </Carousel.Item>
