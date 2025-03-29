@@ -1,11 +1,23 @@
-import React, { useState } from "react";
-import { Navbar, Nav, Form, Container } from "react-bootstrap";
-import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link, useLocation } from 'react-router-dom';
+import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
 import "./styles/MyNavBar.css";
 
 const MyNavbar = ({ darkMode, setDarkMode }) => {
   const [expanded, setExpanded] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -15,77 +27,95 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
 
   const handleToggle = () => {
     setExpanded(!expanded);
-    document.getElementById("myNavbar").classList.toggle("heightClosed", expanded);
   };
 
   const handleSelect = () => {
     setExpanded(false);
-    document.getElementById("myNavbar").classList.add("heightClosed");
+  };
+
+  const isActive = (path) => {
+    return location.pathname === path;
   };
 
   return (
     <Navbar
-      bg={darkMode ? "dark" : "light"}
-      variant={darkMode ? "dark" : "light"}
       expand="lg"
-      sticky="top"
+      fixed="top"
       expanded={expanded}
-      id="myNavbar"
-      className="heightClosed"
+      className={`navbar-custom ${scrolled ? 'scrolled' : ''} ${darkMode ? 'dark' : 'light'}`}
     >
-      <Container className="d-flex justify-content-between mt-auto">
-        <Navbar.Brand as={Link} to="/" onClick={handleSelect}>
+      <Container>
+        <Navbar.Brand as={Link} to="/" onClick={handleSelect} className="brand">
           <img
             src="./kevinLogo.svg"
             alt="Kevin Nguyen"
-            width="100px"
-            height="auto"
+            className="logo"
             style={{
               filter: darkMode ? 'invert(1)' : 'invert(0)',
             }}
-            id="myLogo"
           />
         </Navbar.Brand>
-        <Form>
-          <img
-            src="./darkMode.svg"
-            alt="Dark Mode"
-            width="80px"
-            height="auto"
-            onClick={toggleDarkMode}
-            style={{
-              cursor: 'pointer',
-              filter: darkMode ? 'invert(1)' : 'invert(0)',
-            }}
-            id="dark-mode-icon"
-          />
-        </Form>
-        <Navbar.Toggle aria-controls="responsive-navbar" onClick={handleToggle}>
-          <img
-            src={expanded ? "./expandedIcon.svg" : "./collapsedIcon.svg"}
-            alt="Toggle"
-            width="45px"
-            height="auto"
-            style={{
-              filter: darkMode ? 'invert(1)' : 'invert(0)',
-            }}
-            id="toggle-icon"
-          />
+
+        <Navbar.Toggle 
+          aria-controls="responsive-navbar" 
+          onClick={handleToggle}
+          className="custom-toggler"
+        >
+          <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
 
-        <Navbar.Collapse id="responsive-navbar" className="justify-content-end">
-          <Nav>
-            <Nav.Link as={Link} to="/" className="fs-5" onClick={handleSelect}>HOME</Nav.Link>
-            <Nav.Link as={Link} to="/about" className="fs-5 about-link" onClick={handleSelect}>ABOUT</Nav.Link>
-            <Nav.Link as={Link} to="/projects" className="fs-5 about-link" onClick={handleSelect}>PROJECTS</Nav.Link>
-            <Nav className="d-flex justify-content-center align-items-center ms-auto">
-              <Nav.Link href="https://github.com/KevinDal2027" target="_blank" rel="noopener noreferrer" className="align-items-center">
-                <FaGithub size={35} />
-              </Nav.Link>
-              <Nav.Link href="https://linkedin.com/in/kevin-nguyen-dal" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={35} />
-              </Nav.Link>
-            </Nav>
+        <Navbar.Collapse id="responsive-navbar">
+          <Nav className="ms-auto">
+            <Nav.Link 
+              as={Link} 
+              to="/" 
+              className={`nav-link ${isActive('/') ? 'active' : ''}`}
+              onClick={handleSelect}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link 
+              as={Link} 
+              to="/about" 
+              className={`nav-link ${isActive('/about') ? 'active' : ''}`}
+              onClick={handleSelect}
+            >
+              About
+            </Nav.Link>
+            <Nav.Link 
+              as={Link} 
+              to="/projects" 
+              className={`nav-link ${isActive('/projects') ? 'active' : ''}`}
+              onClick={handleSelect}
+            >
+              Projects
+            </Nav.Link>
+            
+            <div className="nav-icons">
+              <button 
+                className="theme-toggle"
+                onClick={toggleDarkMode}
+                aria-label="Toggle dark mode"
+              >
+                {darkMode ? <FaSun /> : <FaMoon />}
+              </button>
+              <a 
+                href="https://github.com/KevinDal2027" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="nav-icon"
+              >
+                <FaGithub />
+              </a>
+              <a 
+                href="https://linkedin.com/in/kevin-nguyen-dal" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="nav-icon"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>

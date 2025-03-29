@@ -1,9 +1,20 @@
+.projects-section {
+  padding-top: 80px;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+}
+
 .projects-container {
   background-color: #000;
   padding: 20px;
   border-radius: 10px;
   max-width: 850px;
   margin: 0 auto;
+}
+
+.project-carousel {
+  padding-top: 0;
 }
 
 .project-card {
@@ -13,12 +24,18 @@
   overflow: hidden;
 }
 
-.project-details {
-  position: absolute;
-  top: 0;
-  left: 0;
+.projectImg {
   width: 100%;
-  height: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.project-details {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 10;
   display: flex;
@@ -29,27 +46,32 @@
   padding: 20px; 
 }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.theDescription {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-.text-white {
-  color: #fff !important;
+.theDescription h4 {
+  color: #00ff00;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-button.btn-light {
-  background-color: #fff;
-  color: #000;
-  border: none;
+.theDescription p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
-button.btn-light:hover {
-  background-color: #ccc;
+.skillsWrap6, .skillsWrap7 {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  margin-top: 2rem;
 }
 
-.item_7 {
+.item_6, .item_7 {
   font-size: 40px;
   color: white;
   position: absolute;
@@ -61,23 +83,9 @@ button.btn-light:hover {
 }
 
 @keyframes scrollLeft {
-  to{
+  to {
     left: -200px;
   }
-}
-
-
-.skillsWrap7 {
-  max-width: fit-content;
-  margin-inline: auto ;
-  position: relative;
-  height: 40px;
-  overflow: hidden;
-  mask-image: linear-gradient(to right, 
-  rgba(0, 0, 0, 0)
-  rgba(0, 0, 0, 1) 20%,
-  rgba(0, 0, 0, 1) 80%,
-  rgba(0, 0, 0, 0));
 }
 
 .item1 {
@@ -108,28 +116,15 @@ button.btn-light:hover {
   position: absolute;
   left: calc(200px * 6);
   animation-name: scrollLeft6;
-  animation-duration:21s;
+  animation-duration: 21s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 @keyframes scrollLeft6 {
-  to{
+  to {
     left: -200px;
   }
-}
-
-.skillsWrap6 {
-  max-width: fit-content;
-  margin-inline: auto ;
-  position: relative;
-  height: 40px;
-  overflow: hidden;
-  mask-image: linear-gradient(to right, 
-  rgba(0, 0, 0, 0)
-  rgba(0, 0, 0, 1) 20%,
-  rgba(0, 0, 0, 1) 80%,
-  rgba(0, 0, 0, 0));
 }
 
 .item1_6 {
@@ -151,6 +146,41 @@ button.btn-light:hover {
   animation-delay: calc(21s / 6 * (6 - 6) * -1);
 }
 
+.skills2 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skills2 img {
+  transition: transform 0.3s ease;
+}
+
+.skills2 img:hover {
+  transform: scale(1.1);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+button.btn-light {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+button.btn-light:hover {
+  background-color: #ccc;
+}
+
 /* Media query for smaller screens */
 @media (max-width: 600px) {
   .projects-container {
@@ -164,28 +194,4 @@ button.btn-light:hover {
   .projectImg {
     max-width: 100%;
   }
-  /* #chemARpng{
-    display: block !important;
-  }
-  #chemARgif{
-    display: none;
-  }
-  #visionPNG{
-    display: block !important;
-  }
-  #visionGIF{
-    display: none;
-  }
-  #bublePNG{
-    display: block !important;
-  }
-  #bubleGIF{
-    display: none;
-  }
-  #clearCalSVG{
-    display: block !important;
-  }
-  #clearCalGIF{
-    display: none;
-  } */
 }

@@ -1,27 +1,153 @@
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-  }
-  
-  .dark-mode .navbar {
-    background-color: #f3f0f021 !important;
-  }
-  
-  .dark-mode .nav-link {
-    color: rgba(255, 255, 255, 0.75) !important;
-  }
-  
-  .dark-mode .nav-link:hover {
-    color: rgba(255, 255, 255, 1) !important;
-  }
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --text-color: #1f2937;
+  --bg-color: #ffffff;
+  --accent-color: #3b82f6;
+  --transition-speed: 0.3s;
+}
 
-* {
-  font-family: 'Times New Roman', serif;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+body.dark-mode {
+  --text-color: #f3f4f6;
+  --bg-color: #111827;
+  --primary-color: #3b82f6;
+  --secondary-color: #2563eb;
+  --accent-color: #60a5fa;
 }
 
 #root {
-  height: 100vh;
-  width:auto;
-  overflow-y: scroll !important;
-  overflow-x:hidden !important;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Global transitions */
+* {
+  transition: background-color var(--transition-speed),
+              color var(--transition-speed),
+              border-color var(--transition-speed),
+              box-shadow var(--transition-speed);
+}
+
+/* Container max-width */
+.container {
+  max-width: 1200px;
+  padding: 0 1.5rem;
+}
+
+/* Section spacing */
+section {
+  padding: 4rem 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all var(--transition-speed);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+/* Cards */
+.card {
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode navbar */
+.dark-mode .navbar {
+  background-color: rgba(17, 24, 39, 0.8) !important;
+  backdrop-filter: blur(8px);
+}
+
+.dark-mode .nav-link {
+  color: rgba(243, 244, 246, 0.75) !important;
+}
+
+.dark-mode .nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Main content padding for navbar */
+main {
+  padding-top: 80px; /* Adjust this value based on your navbar height */
+}
+
+/* Section containers */
+.section-container {
+  padding-top: 80px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Remove the blurring effect from the main content */
+#aboutcontent {
+  filter: none !important;
 }
