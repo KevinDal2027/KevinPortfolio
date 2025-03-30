@@ -19,13 +19,32 @@ const About = ({ darkMode }) => {
     setOpenSection(openSection === section ? null : section);
   };
 
+
+  const calculateDaysSince = (startDate) => {
+    const start = new Date(startDate);
+    const now = new Date();
+    const diffTime = now - start;
+    return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  };
+
+  const days = calculateDaysSince('2018-08-01');
+
+  const calculateYearsSince = (startDate) => {
+    const start = new Date(startDate);
+    const now = new Date();
+    const diffTime = now - start;
+    return Math.ceil(diffTime / (365000*60*60*24));
+  };
+
+  const year = calculateYearsSince('2018-08-01');
+
   const renderContent = () => {
     switch (openSection) {
       case 'background':
         return (
           <div className='about-content'>
             <p>
-              Originally from Vietnam, I moved to Canada eight years ago, embracing new experiences that have shaped my growth. I've always been passionate about exploring new opportunities, learning new skills, and pushing my boundaries. Whether through technology, creative projects, or problem-solving, I thrive on challenges that help me grow and adapt.
+              Originally from Vietnam, I moved to Canada {year} years ago or {days} days ago, embracing new experiences that have shaped my growth. I've always been passionate about exploring new opportunities, learning new skills, and pushing my boundaries. Whether through technology, creative projects, or problem-solving, I thrive on challenges that help me grow and adapt.
             </p>
           </div>
         );
