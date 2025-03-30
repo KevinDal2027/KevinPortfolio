@@ -406,7 +406,7 @@ const Projects = () => {
                 </div>
               </Collapse>
             <Card className="project-card">
-              <Card.Img variant="top" alt ="Kevin Web gif" src="./assets/projectThumbnails/KEVINWEB.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
+              <Card.Img variant="top" alt ="Kevin Web gif" src="./K.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
               <Card.Body>
                 <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Portfolio Website</Card.Title>
                 <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
