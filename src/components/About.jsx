@@ -96,12 +96,12 @@ const About = ({ darkMode }) => {
               Here are some of the skills I've developed over the years:
             </p>
             <ul>
-              <li>Java, Python, C and C#</li>
-              <li>HTML/CSS/JavaScript, EJS, BootStrap, jQuery</li>
-              <li>React, Node.js, Folium, Spacy, Pandas, Matplotlib</li>
-              <li>Machine Learning, Data Analytics</li>
-              <li>Web Developments, DevOps</li>
-              <li>.NET Framework in C#</li>
+              <li><strong>Languages</strong>: Java, Python, C and C#</li>
+              <li><strong>Front-end Development</strong>: React, Folium, HTML/CSS/JavaScript, EJS, BootStrap, jQuery</li>
+              <li><strong>Back-end Development</strong>: Node.js, Express.js, ASP.NET</li>
+              <li><strong>Data Analytics</strong>: spaCy, numPy, Pandas, Matplotlib</li>
+              <li><strong>Machine Learning</strong>: Scikit-learn / Linear Regression | Decision Tree, NLP</li>
+              <li><strong>Work Procedural</strong>: AGILE, DevOps</li>
             </ul>
             <div className="cta-link">
               <Nav.Link as={Link} to="/projects" className="clickable-text">
