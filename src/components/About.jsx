@@ -127,18 +127,18 @@ const About = ({ darkMode }) => {
             <button onClick={() => toggleSection('basketball')} className={openSection === 'basketball' ? 'active' : ''}>
               Basketball
             </button>
-            <button onClick={() => toggleSection('travel')} className={openSection === 'travel' ? 'active' : ''}>
+            {/* <button onClick={() => toggleSection('travel')} className={openSection === 'travel' ? 'active' : ''}>
               Travel
-            </button>
+            </button> */}
             <button onClick={() => toggleSection('coding')} className={openSection === 'coding' ? 'active' : ''}>
               Hackathons
             </button>
             <button onClick={() => toggleSection('chess')} className={openSection === 'chess' ? 'active' : ''}>
               Chess & Music
             </button>
-            <button onClick={() => toggleSection('outdoor')} className={openSection === 'outdoor' ? 'active' : ''}>
+            {/* <button onClick={() => toggleSection('outdoor')} className={openSection === 'outdoor' ? 'active' : ''}>
               Outdoor Activities
-            </button>
+            </button> */}
             <button onClick={() => toggleSection('skills')} className={openSection === 'skills' ? 'active' : ''}>
               Skills
             </button>
