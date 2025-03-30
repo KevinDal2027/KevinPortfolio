@@ -7,6 +7,7 @@ import "./styles/MyNavBar.css";
 const MyNavbar = ({ darkMode, setDarkMode }) => {
   const [expanded, setExpanded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -27,10 +28,12 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
 
   const handleToggle = () => {
     setExpanded(!expanded);
+    setClicked(true);
   };
 
   const handleSelect = () => {
     setExpanded(false);
+    setClicked(false);
   };
 
   const isActive = (path) => {
@@ -42,7 +45,7 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
       expand="lg"
       fixed="top"
       expanded={expanded}
-      className={`navbar-custom ${scrolled ? 'scrolled' : ''} ${darkMode ? 'dark' : 'light'}`}
+      className={`navbar-custom ${scrolled ? 'scrolled' : ''} ${darkMode ? 'dark' : 'light'} ${clicked ? 'clicked' : ''}`}
     >
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleSelect} className="brand">
