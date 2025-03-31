@@ -11,7 +11,7 @@
 }
 
 .about-container {
-  padding-top: 80px;
+  padding-top: 15vh;
   min-height: 100vh;
   background: linear-gradient(135deg, var(--bg-color) 0%, rgba(var(--primary-color-rgb), 0.05) 100%);
   color: white;
@@ -145,6 +145,7 @@
   align-items: center;
   z-index: 1000;
   padding: 2rem;
+  padding-top: 80px;
 }
 
 .image-gallery {
