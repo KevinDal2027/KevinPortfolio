@@ -195,7 +195,7 @@
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .navbar-custom {
-    padding: 0.5rem 0;
+    padding: 0 0;
   }
 
   .nav-icons {
