@@ -128,6 +128,10 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+.aboutMeBtn, .projectsBtn{
+  width: 100%;
+}
+
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .hero-content {

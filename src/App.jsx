@@ -8,11 +8,11 @@ import About from './components/About';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    document.body.classList.add('dark-mode');
-  }, []);
+  // useEffect(() => {
+  //   document.body.classList.add('dark-mode');
+  // }, []);
 
   return (
     <Router>
