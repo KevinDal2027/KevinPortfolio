@@ -1,11 +1,25 @@
-import React, {useState} from 'react';
-import { Carousel, Card, Button, Collapse } from 'react-bootstrap';
+import React, {useState, useEffect} from 'react';
+import { Carousel, Card, Button, Collapse, Spinner } from 'react-bootstrap';
 import { FaReact } from 'react-icons/fa';
 import './styles/Projects.css';
 
 const Projects = () => {
   const [open, setOpen] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [imagesLoaded, setImagesLoaded] = useState({});
   
+  useEffect(() => {
+    // Simulate loading time for smoother transitions
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleImageLoad = (imageId) => {
+    setImagesLoaded(prev => ({...prev, [imageId]: true}));
+  };
+
   const calculateDaysSince = (startDate) => {
     const start = new Date(startDate);
     const now = new Date();
@@ -22,10 +36,19 @@ const Projects = () => {
   return (
     <div className="projects-section">
       <div className="projects-container">
-        <p className="text-center text-muted text-white fw-bold fs-5">Click the image for more details</p>
-        <Carousel className="project-carousel" interval={null}>
-          <Carousel.Item >
-             <Collapse in={open === 0}>
+        <p className="text-center text-muted text-white fw-bold fs-5 mb-4">
+          <span className="d-none d-md-inline">Click the image for more details</span>
+          <span className="d-md-none">Tap the image for more details</span>
+        </p>
+        {loading ? (
+          <div className="text-center py-5">
+            <Spinner animation="border" variant="light" />
+            <p className="text-white mt-3">Loading projects...</p>
+          </div>
+        ) : (
+          <Carousel className="project-carousel" interval={null} indicators={false}>
+            <Carousel.Item >
+              <Collapse in={open === 0}>
                 <div className="project-details text-white p-3">
                   <Button
                     onClick={() => toggleCollapse(null)}
@@ -50,30 +73,47 @@ const Projects = () => {
                   </div>
                 </div>
               </Collapse>
-            <Card className="project-card">
-              <Card.Img class = "projectImg" id = "chemARgif" variant="top" alt ="ChemAR gif" src="./assets/projectThumbnails/ChemAR.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
-              <Card.Body>
-                <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ChemAR</Card.Title>
-                <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                ChemAR is a tool that helps students and educators explore complex molecular structures in an interactive <a href='https://www.investopedia.com/terms/a/augmented-reality.asp' target='__blank'>AR environment</a>, making chemistry concepts more accessible and engaging. It enhances learning by visualizing molecules in 3D, bridging the gap between theory and practice.
-                <div class = "skillsWrap7" className='pb-5'>
-                   <div class = "item_7 item1"><img alt = "NodeJS icon" width= "150px" src='./assets/skills/NodeJS.svg' /></div>
-                   <div class = "item_7 item2"><img alt = "ThreeJS icon" width= "150px" src='./assets/skills/ThreeJS.svg' /></div>
-                   <div class = "item_7 item3"><img alt = "EJS icon" width= "150px" src='./assets/skills/EJS.svg' /></div>
-                   <div class = "item_7 item4"><img alt = "jQuery icon" width= "150px" src='./assets/skills/jQuery.svg' /></div>
-                   <div class = "item_7 item5"><img alt = "Agile icon" width= "150px" src='./assets/skills/Agile.svg' /></div>
-                   <div class = "item_7 item6"><img alt = "REST icon" width= "150px" src='./assets/skills/REST.svg' /></div>
-                   <div class = "item_7 item7"><img alt = "JIRA icon" width= "150px" src='./assets/skills/JIRA.svg' /></div>
-                 </div>
-                </Card.Text>
-                <Button className="w-50 mb-4 mt-1 mx-auto d-block" variant="light" href="https://dalchemar.azurewebsites.net/" target="_blank">
-                  View Website
-                </Button>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
-          <Carousel.Item>
-            <Collapse in={open === 0}>
+              <Card className="project-card">
+                {!imagesLoaded['chemAR'] && (
+                  <div className="image-loading-placeholder">
+                    <Spinner animation="border" variant="light" size="sm" />
+                  </div>
+                )}
+                <Card.Img
+                  className="projectImg"
+                  id="chemARgif"
+                  variant="top"
+                  alt="ChemAR gif"
+                  src="./assets/projectThumbnails/ChemAR.gif"
+                  onClick={() => toggleCollapse(0)}
+                  style={{ 
+                    cursor: 'pointer',
+                    display: imagesLoaded['chemAR'] ? 'block' : 'none'
+                  }}
+                  onLoad={() => handleImageLoad('chemAR')}
+                />
+                <Card.Body>
+                  <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ChemAR</Card.Title>
+                  <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+                  ChemAR is a tool that helps students and educators explore complex molecular structures in an interactive <a href='https://www.investopedia.com/terms/a/augmented-reality.asp' target='__blank'>AR environment</a>, making chemistry concepts more accessible and engaging. It enhances learning by visualizing molecules in 3D, bridging the gap between theory and practice.
+                  <div class = "skillsWrap7" className='pb-5'>
+                     <div class = "item_7 item1"><img alt = "NodeJS icon" width= "150px" src='./assets/skills/NodeJS.svg' /></div>
+                     <div class = "item_7 item2"><img alt = "ThreeJS icon" width= "150px" src='./assets/skills/ThreeJS.svg' /></div>
+                     <div class = "item_7 item3"><img alt = "EJS icon" width= "150px" src='./assets/skills/EJS.svg' /></div>
+                     <div class = "item_7 item4"><img alt = "jQuery icon" width= "150px" src='./assets/skills/jQuery.svg' /></div>
+                     <div class = "item_7 item5"><img alt = "Agile icon" width= "150px" src='./assets/skills/Agile.svg' /></div>
+                     <div class = "item_7 item6"><img alt = "REST icon" width= "150px" src='./assets/skills/REST.svg' /></div>
+                     <div class = "item_7 item7"><img alt = "JIRA icon" width= "150px" src='./assets/skills/JIRA.svg' /></div>
+                   </div>
+                  </Card.Text>
+                  <Button className="w-50 mb-4 mt-1 mx-auto d-block" variant="light" href="https://dalchemar.azurewebsites.net/" target="_blank">
+                    View Website
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+            <Carousel.Item>
+              <Collapse in={open === 0}>
                 <div className="project-details text-white p-3">
                   <Button
                     onClick={() => toggleCollapse(null)}
@@ -92,45 +132,55 @@ const Projects = () => {
                   </div>
                 </div>
               </Collapse>
-            <Card className="project-card">
-              {/* <Card.Img class = "projectImg" id = "visionPNG" variant="top" alt ="Emission Vision png" src="./assets/projectThumbnails/CO2Vision.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer', display : "none" }}/> */}
-              <Card.Img
-                variant="top"
-                alt="Emission Vision gif"
-                src="./assets/projectThumbnails/CO2Vision.gif"
-                className="img-fluid" 
-                style={{ maxHeight: '450px', objectFit: 'cover', cursor: 'pointer' }}
-                onClick={() => toggleCollapse(0)}
-                id = "visionGIF"
-              />
-               <Card.Body>
-                <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Emission Vision (Algae Correlation)</Card.Title>
-                <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                This project maps algal growth against <a href="https://www.statista.com/statistics/481142/greenhouse-gas-emissions-in-canada-by-province" target='__blank'>CO2 emissions in Alberta</a> to identify spatial correlations and trends.
-                 By leveraging geospatial data, it provides insights into algae's potential role in carbon sequestration, 
-                 supporting environmental research and policy development.
-                  <div class="skillsWrap6" className="pb-5">
-                    <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="./assets/skills/Python.svg" /></div>
-                    <div class="item_6 item2_6"><img alt="Flask icon" width="150px" src="./assets/skills/Flask.svg" /></div>
-                    <div class="item_6 item3_6"><img alt="Folium icon" width="150px" src="./assets/skills/Folium.svg" /></div>
-                    <div class="item_6 item4_6"><img alt="mySQL icon" width="150px" src="./assets/skills/mySQL.svg" /></div>
-                    <div class="item_6 item5_6"><img alt="Bootstrap icon" width="150px" src="./assets/skills/Bootstrap.svg" /></div>
-                    <div class="item_6 item6_6"><img alt="JSON icon" width="150px" src="./assets/skills/JSON.svg" /></div>
+              <Card className="project-card">
+                {!imagesLoaded['vision'] && (
+                  <div className="image-loading-placeholder">
+                    <Spinner animation="border" variant="light" size="sm" />
                   </div>
-                </Card.Text>
-                  <div className="d-flex justify-content-center gap-2">
-                    <Button className="w-50 mb-4 mt-1" variant="light" href="https://algaeandco2.vercel.app/" target="_blank">
-                      View Website
-                    </Button>
-                    <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/communitymappingNASAHackathon2024" target="_blank">
-                      Visit on GitHub
-                    </Button>
-                  </div>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
-          <Carousel.Item >
-            <Collapse in={open === 0}>
+                )}
+                <Card.Img
+                  variant="top"
+                  alt="Emission Vision gif"
+                  src="./assets/projectThumbnails/CO2Vision.gif"
+                  className="img-fluid" 
+                  style={{ 
+                    maxHeight: '450px', 
+                    objectFit: 'cover', 
+                    cursor: 'pointer',
+                    display: imagesLoaded['vision'] ? 'block' : 'none'
+                  }}
+                  onClick={() => toggleCollapse(0)}
+                  id = "visionGIF"
+                  onLoad={() => handleImageLoad('vision')}
+                />
+                 <Card.Body>
+                  <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Emission Vision (Algae Correlation)</Card.Title>
+                  <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+                  This project maps algal growth against <a href="https://www.statista.com/statistics/481142/greenhouse-gas-emissions-in-canada-by-province" target='__blank'>CO2 emissions in Alberta</a> to identify spatial correlations and trends.
+                   By leveraging geospatial data, it provides insights into algae's potential role in carbon sequestration, 
+                   supporting environmental research and policy development.
+                    <div class="skillsWrap6" className="pb-5">
+                      <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="./assets/skills/Python.svg" /></div>
+                      <div class="item_6 item2_6"><img alt="Flask icon" width="150px" src="./assets/skills/Flask.svg" /></div>
+                      <div class="item_6 item3_6"><img alt="Folium icon" width="150px" src="./assets/skills/Folium.svg" /></div>
+                      <div class="item_6 item4_6"><img alt="mySQL icon" width="150px" src="./assets/skills/mySQL.svg" /></div>
+                      <div class="item_6 item5_6"><img alt="Bootstrap icon" width="150px" src="./assets/skills/Bootstrap.svg" /></div>
+                      <div class="item_6 item6_6"><img alt="JSON icon" width="150px" src="./assets/skills/JSON.svg" /></div>
+                    </div>
+                  </Card.Text>
+                    <div className="d-flex justify-content-center gap-2">
+                      <Button className="w-50 mb-4 mt-1" variant="light" href="https://algaeandco2.vercel.app/" target="_blank">
+                        View Website
+                      </Button>
+                      <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/communitymappingNASAHackathon2024" target="_blank">
+                        Visit on GitHub
+                      </Button>
+                    </div>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+            <Carousel.Item >
+              <Collapse in={open === 0}>
                 <div className="project-details text-white p-3">
                   <Button
                     onClick={() => toggleCollapse(null)}
@@ -154,39 +204,54 @@ const Projects = () => {
                   </div>
                 </div>
               </Collapse>
-            <Card className="project-card">
-            {/* <Card.Img variant="top" id = "clearCalSVG" alt ="ClearCalAI svg" src="./assets/projectThumbnails/ClearCal.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/> */}
-              <Card.Img variant="top" id = "clearCalGIF" alt ="ClearCalAI gif" src="./assets/projectThumbnails/ClearCal.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
-              <Card.Body>
-                <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ClearCal AI (Lesser Stress for Best)</Card.Title>
-                <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                ClearCal AI is an intelligent task manager that automates scheduling with AI and Google Calendar integration, 
-                reducing user's stress by helping them manage their time more effectively.
-                It features speech-to-text input to generate detailed action plans to streamline productivity. 
-                <div class = "skillsWrap7" className='pb-5'>
-                   <div class = "item_7 item1"><img alt = "React icon" width= "150px" src='./assets/skills/React.js.svg' /></div>
-                   <div class = "item_7 item2"><img alt = "NodeJS icon" width= "150px" src='./assets/skills/NodeJS.svg' /></div>
-                   <div class = "item_7 item3"><img alt = "Bootstrap icon" width= "150px" src='./assets/skills/Bootstrap.svg' /></div>
-                   <div class = "item_7 item4"><img alt = "JavaScript icon" width= "150px" src='./assets/skills/JavaScript.svg' /></div>
-                   <div class = "item_7 item5"><img alt = "Vite icon" width= "150px" src='./assets/skills/Vite.svg' /></div>
-                   <div class = "item_7 item6"><img alt = "GeminiAI icon" width= "150px" src='./assets/skills/gemini.svg' /></div>
-                   <div class = "item_7 item7"><img alt = "GoogleCalendar icon" width= "150px" src='./assets/skills/GoogleCal.svg' /></div>
-                 </div>
-                </Card.Text>
-                <div className="d-flex justify-content-center gap-2">
-                    <Button className="w-50 mb-4 mt-1" variant="light" href="https://clearcalai.vercel.app" target="_blank">
-                      Visit Website
-                    </Button>
-                    <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/genaihackathon" target="_blank">
-                      Visit on GitHub
-                    </Button>
+              <Card className="project-card">
+                {!imagesLoaded['clearCal'] && (
+                  <div className="image-loading-placeholder">
+                    <Spinner animation="border" variant="light" size="sm" />
                   </div>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
+                )}
+                <Card.Img
+                  variant="top"
+                  id="clearCalGIF"
+                  alt="ClearCalAI gif"
+                  src="./assets/projectThumbnails/ClearCal.gif"
+                  onClick={() => toggleCollapse(0)}
+                  style={{ 
+                    cursor: 'pointer',
+                    display: imagesLoaded['clearCal'] ? 'block' : 'none'
+                  }}
+                  onLoad={() => handleImageLoad('clearCal')}
+                />
+                <Card.Body>
+                  <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>ClearCal AI (Lesser Stress for Best)</Card.Title>
+                  <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+                  ClearCal AI is an intelligent task manager that automates scheduling with AI and Google Calendar integration, 
+                  reducing user's stress by helping them manage their time more effectively.
+                  It features speech-to-text input to generate detailed action plans to streamline productivity. 
+                  <div class = "skillsWrap7" className='pb-5'>
+                     <div class = "item_7 item1"><img alt = "React icon" width= "150px" src='./assets/skills/React.js.svg' /></div>
+                     <div class = "item_7 item2"><img alt = "NodeJS icon" width= "150px" src='./assets/skills/NodeJS.svg' /></div>
+                     <div class = "item_7 item3"><img alt = "Bootstrap icon" width= "150px" src='./assets/skills/Bootstrap.svg' /></div>
+                     <div class = "item_7 item4"><img alt = "JavaScript icon" width= "150px" src='./assets/skills/JavaScript.svg' /></div>
+                     <div class = "item_7 item5"><img alt = "Vite icon" width= "150px" src='./assets/skills/Vite.svg' /></div>
+                     <div class = "item_7 item6"><img alt = "GeminiAI icon" width= "150px" src='./assets/skills/gemini.svg' /></div>
+                     <div class = "item_7 item7"><img alt = "GoogleCalendar icon" width= "150px" src='./assets/skills/GoogleCal.svg' /></div>
+                   </div>
+                  </Card.Text>
+                  <div className="d-flex justify-content-center gap-2">
+                      <Button className="w-50 mb-4 mt-1" variant="light" href="https://clearcalai.vercel.app" target="_blank">
+                        Visit Website
+                      </Button>
+                      <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/genaihackathon" target="_blank">
+                        Visit on GitHub
+                      </Button>
+                    </div>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
 
-          <Carousel.Item >
-            <Collapse in={open === 0}>
+            <Carousel.Item >
+              <Collapse in={open === 0}>
                 <div className="project-details text-white p-3">
                   <Button
                     onClick={() => toggleCollapse(null)}
@@ -212,33 +277,48 @@ const Projects = () => {
                   </div>
                 </div>
               </Collapse>
-            <Card className="project-card">
-            {/* <Card.Img variant="top" id = "clearCalSVG" alt ="ClearCalAI svg" src="./assets/projectThumbnails/ClearCal.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/> */}
-              <Card.Img variant="top" id = "clearCalGIF" alt ="ClearCalAI gif" src="./assets/projectThumbnails/taskManager.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
-              <Card.Body>
-                <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Task Manager – ASP.NET Core & EF Core</Card.Title>
-                <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                This is a lightweight and efficient task management app built with ASP.NET Core and EF Core, designed to help users organize and prioritize their tasks effortlessly. 
-                It features a clean API for seamless task creation, updates, and deletion, with automatic sorting by due date and priority. With a simple yet powerful interface, 
-                it streamlines productivity by keeping users focused and organized.
-                <div class="skillsWrap6" className="pb-5">
-                    <div class="item_6 item1_6"><img alt="C# icon" width="150px" src="./assets/skills/CSharp.svg" /></div>
-                    <div class="item_6 item2_6"><img alt="ASP.NET icon" width="150px" src="./assets/skills/ASP.svg" /></div>
-                    <div class="item_6 item3_6"><img alt="SQL icon" width="150px" src="./assets/skills/SQL.svg" /></div>
-                    <div class="item_6 item4_6"><img alt="HTML icon" width="150px" src="./assets/skills/HTML.svg" /></div>
-                    <div class="item_6 item5_6"><img alt="CSS icon" width="150px" src="./assets/skills/CSS.svg" /></div>
-                    <div class="item_6 item6_6"><img alt="JS icon" width="150px" src="./assets/skills/JavaScript.svg" /></div>
-                </div>
-                </Card.Text>
-                <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/TaskManager-.NET-Framework" target="_blank">
-                  Visit on GitHub
-                </Button>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
-          
-          <Carousel.Item >
-            <Collapse in={open === 0}>
+              <Card className="project-card">
+                {!imagesLoaded['taskManager'] && (
+                  <div className="image-loading-placeholder">
+                    <Spinner animation="border" variant="light" size="sm" />
+                  </div>
+                )}
+                <Card.Img
+                  variant="top"
+                  id="clearCalGIF"
+                  alt="ClearCalAI gif"
+                  src="./assets/projectThumbnails/taskManager.png"
+                  onClick={() => toggleCollapse(0)}
+                  style={{ 
+                    cursor: 'pointer',
+                    display: imagesLoaded['taskManager'] ? 'block' : 'none'
+                  }}
+                  onLoad={() => handleImageLoad('taskManager')}
+                />
+                <Card.Body>
+                  <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Task Manager – ASP.NET Core & EF Core</Card.Title>
+                  <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+                  This is a lightweight and efficient task management app built with ASP.NET Core and EF Core, designed to help users organize and prioritize their tasks effortlessly. 
+                  It features a clean API for seamless task creation, updates, and deletion, with automatic sorting by due date and priority. With a simple yet powerful interface, 
+                  it streamlines productivity by keeping users focused and organized.
+                  <div class="skillsWrap6" className="pb-5">
+                      <div class="item_6 item1_6"><img alt="C# icon" width="150px" src="./assets/skills/CSharp.svg" /></div>
+                      <div class="item_6 item2_6"><img alt="ASP.NET icon" width="150px" src="./assets/skills/ASP.svg" /></div>
+                      <div class="item_6 item3_6"><img alt="SQL icon" width="150px" src="./assets/skills/SQL.svg" /></div>
+                      <div class="item_6 item4_6"><img alt="HTML icon" width="150px" src="./assets/skills/HTML.svg" /></div>
+                      <div class="item_6 item5_6"><img alt="CSS icon" width="150px" src="./assets/skills/CSS.svg" /></div>
+                      <div class="item_6 item6_6"><img alt="JS icon" width="150px" src="./assets/skills/JavaScript.svg" /></div>
+                  </div>
+                  </Card.Text>
+                  <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/TaskManager-.NET-Framework" target="_blank">
+                    Visit on GitHub
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+            
+            <Carousel.Item >
+              <Collapse in={open === 0}>
                 <div className="project-details text-white p-3">
                   <Button
                     onClick={() => toggleCollapse(null)}
@@ -262,35 +342,50 @@ const Projects = () => {
                   </div>
                 </div>
               </Collapse>
-            <Card className="project-card">
-              <Card.Img variant="top" alt ="Emotion Analysis gif" src="./assets/projectThumbnails/Emotion.svg" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
-              <Card.Body>
-                <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Emotion Analysis and Prediction</Card.Title>
-                <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                This emotion analysis and prediction project uses <a href='https://realpython.com/natural-language-processing-spacy-python/' target='__blank'>NLP techniques</a> to analyze text and predict emotions with machine learning models. 
-                It uses spaCy for processing, Matplotlib and pandas for visualization, and evaluates models like Linear Regression and Decision Trees for accuracy.
-                <div class="skillsWrap6" className="pb-5">
-                    <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="./assets/skills/Python.svg" /></div>
-                    <div class="item_6 item2_6"><img alt="Flask icon" width="150px" src="./assets/skills/Flask.svg" /></div>
-                    <div class="item_6 item3_6"><img alt="Matplotlib icon" width="150px" src="./assets/skills/matplotlib.svg" /></div>
-                    <div class="item_6 item4_6"><img alt="Pandas icon" width="150px" src="./assets/skills/Pandas.svg" /></div>
-                    <div class="item_6 item5_6"><img alt="Scikit-learn icon" width="150px" src="./assets/skills/scikit.svg" /></div>
-                    <div class="item_6 item6_6"><img alt="Spacy icon" width="150px" src="./assets/skills/Spacy.svg" /></div>
+              <Card className="project-card">
+                {!imagesLoaded['emotion'] && (
+                  <div className="image-loading-placeholder">
+                    <Spinner animation="border" variant="light" size="sm" />
                   </div>
-                </Card.Text>
-                <div className="d-flex justify-content-center gap-2">
-                    <Button className="w-50 mb-4 mt-1" variant="light" href="https://text-to-emotion-prediction-website.onrender.com/" target="_blank">
-                      View Website
-                    </Button>
-                    <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/TextToEmotionPredictionModel" target="_blank">
-                      Visit on GitHub
-                    </Button>
-                  </div>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
-          <Carousel.Item >
-            <Collapse in={open === 0}>
+                )}
+                <Card.Img
+                  variant="top"
+                  alt="Emotion Analysis gif"
+                  src="./assets/projectThumbnails/Emotion.svg"
+                  onClick={() => toggleCollapse(0)}
+                  style={{ 
+                    cursor: 'pointer',
+                    display: imagesLoaded['emotion'] ? 'block' : 'none'
+                  }}
+                  onLoad={() => handleImageLoad('emotion')}
+                />
+                <Card.Body>
+                  <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Emotion Analysis and Prediction</Card.Title>
+                  <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+                  This emotion analysis and prediction project uses <a href='https://realpython.com/natural-language-processing-spacy-python/' target='__blank'>NLP techniques</a> to analyze text and predict emotions with machine learning models. 
+                  It uses spaCy for processing, Matplotlib and pandas for visualization, and evaluates models like Linear Regression and Decision Trees for accuracy.
+                  <div class="skillsWrap6" className="pb-5">
+                      <div class="item_6 item1_6"><img alt="Python icon" width="150px" src="./assets/skills/Python.svg" /></div>
+                      <div class="item_6 item2_6"><img alt="Flask icon" width="150px" src="./assets/skills/Flask.svg" /></div>
+                      <div class="item_6 item3_6"><img alt="Matplotlib icon" width="150px" src="./assets/skills/matplotlib.svg" /></div>
+                      <div class="item_6 item4_6"><img alt="Pandas icon" width="150px" src="./assets/skills/Pandas.svg" /></div>
+                      <div class="item_6 item5_6"><img alt="Scikit-learn icon" width="150px" src="./assets/skills/scikit.svg" /></div>
+                      <div class="item_6 item6_6"><img alt="Spacy icon" width="150px" src="./assets/skills/Spacy.svg" /></div>
+                    </div>
+                  </Card.Text>
+                  <div className="d-flex justify-content-center gap-2">
+                      <Button className="w-50 mb-4 mt-1" variant="light" href="https://text-to-emotion-prediction-website.onrender.com/" target="_blank">
+                        View Website
+                      </Button>
+                      <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/TextToEmotionPredictionModel" target="_blank">
+                        Visit on GitHub
+                      </Button>
+                    </div>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+            <Carousel.Item >
+              <Collapse in={open === 0}>
                 <div className="project-details text-white p-3">
                   <Button
                     onClick={() => toggleCollapse(null)}
@@ -314,29 +409,44 @@ const Projects = () => {
                   </div>
                 </div>
               </Collapse>
-            <Card className="project-card">
-              <Card.Img variant="top" alt ="Weather App gif" src="./assets/projectThumbnails/Weather.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
-              <Card.Body>
-                <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Weather App</Card.Title>
-                <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                A Java Swing GUI app that retrieves and displays real-time weather data from OpenWeatherAPI. It integrates JSON parsing and HTTP connection handling to ensure accurate and reliable weather updates, providing users with a seamless experience.
-                <div class="skillsWrap6" className="pb-5">
-                    <div class="item_6 item1_6"><img alt="Java icon" width="150px" src="./assets/skills/Java.svg" /></div>
-                    <div class="item_6 item2_6"><img alt="Java Swing icon" width="150px" src="./assets/skills/Swing.svg" /></div>
-                    <div class="item_6 item3_6"><img alt="Java Net icon" width="150px" src="./assets/skills/Net.svg" /></div>
-                    <div class="item_6 item4_6"><img alt="JSON icon" width="150px" src="./assets/skills/JSON.svg" /></div>
-                    <div class="item_6 item5_6"><img alt="OpenWeatherAPI icon" width="150px" src="./assets/skills/openAPI.svg" /></div>
-                    <div class="item_6 item6_6"><img alt="REST icon" width="150px" src="./assets/skills/REST.svg" /></div>
+              <Card className="project-card">
+                {!imagesLoaded['weather'] && (
+                  <div className="image-loading-placeholder">
+                    <Spinner animation="border" variant="light" size="sm" />
                   </div>
-                </Card.Text>
-                <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/WeatherAppJava" target="_blank">
-                  Visit on GitHub
-                </Button>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
-          <Carousel.Item >
-            <Collapse in={open === 0}>
+                )}
+                <Card.Img
+                  variant="top"
+                  alt="Weather App gif"
+                  src="./assets/projectThumbnails/Weather.gif"
+                  onClick={() => toggleCollapse(0)}
+                  style={{ 
+                    cursor: 'pointer',
+                    display: imagesLoaded['weather'] ? 'block' : 'none'
+                  }}
+                  onLoad={() => handleImageLoad('weather')}
+                />
+                <Card.Body>
+                  <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Weather App</Card.Title>
+                  <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+                  A Java Swing GUI app that retrieves and displays real-time weather data from OpenWeatherAPI. It integrates JSON parsing and HTTP connection handling to ensure accurate and reliable weather updates, providing users with a seamless experience.
+                  <div class="skillsWrap6" className="pb-5">
+                      <div class="item_6 item1_6"><img alt="Java icon" width="150px" src="./assets/skills/Java.svg" /></div>
+                      <div class="item_6 item2_6"><img alt="Java Swing icon" width="150px" src="./assets/skills/Swing.svg" /></div>
+                      <div class="item_6 item3_6"><img alt="Java Net icon" width="150px" src="./assets/skills/Net.svg" /></div>
+                      <div class="item_6 item4_6"><img alt="JSON icon" width="150px" src="./assets/skills/JSON.svg" /></div>
+                      <div class="item_6 item5_6"><img alt="OpenWeatherAPI icon" width="150px" src="./assets/skills/openAPI.svg" /></div>
+                      <div class="item_6 item6_6"><img alt="REST icon" width="150px" src="./assets/skills/REST.svg" /></div>
+                    </div>
+                  </Card.Text>
+                  <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/WeatherAppJava" target="_blank">
+                    Visit on GitHub
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+            <Carousel.Item >
+              <Collapse in={open === 0}>
                 <div className="project-details text-white p-3">
                   <Button
                     onClick={() => toggleCollapse(null)}
@@ -359,31 +469,46 @@ const Projects = () => {
                   </div>
                 </div>
               </Collapse>
-            <Card className="project-card">
-            {/* <Card.Img variant="top" id = "bublePNG"alt ="Escape Room png" src="./assets/projectThumbnails/buble.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer',display: "none" }}/> */}
-            <Card.Img variant="top" id = "bubleGIF"alt ="Escape Room gif" src="./assets/projectThumbnails/buble.gif" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
-              <Card.Body>
-                <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Escape Room (Global Game Jam 2025)</Card.Title>
-                <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                Escape Michael Bublé's bubble gum factory in this quirky Unity game! Use bubble gum to float, dodge hazards, and reach the exit before running out or getting caught.
-                <div class="skills2" className="pt-4 d-flex justify-content-around">
-                    <div><img alt="Unity icon" width="150px" src="./assets/skills/unity.svg" /></div>
-                    <div><img alt="C# icon" width="150px" src="./assets/skills/CSharp.svg" /></div>
+              <Card className="project-card">
+                {!imagesLoaded['escape'] && (
+                  <div className="image-loading-placeholder">
+                    <Spinner animation="border" variant="light" size="sm" />
                   </div>
-                </Card.Text>
-                <div className="d-flex justify-content-center gap-2">
-                    <Button className="w-50 mb-4 mt-1" variant="light" href="https://perfectoctogon.itch.io/escape-michael-bubles-bubblegum-factory" target="_blank">
-                      Play Game Now
-                    </Button>
-                    <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/GlobalGamejam2025" target="_blank">
-                      Visit on GitHub
-                    </Button>
-                  </div>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
-          <Carousel.Item >
-            <Collapse in={open === 0}>
+                )}
+                <Card.Img
+                  variant="top"
+                  id="bubleGIF"
+                  alt="Escape Room gif"
+                  src="./assets/projectThumbnails/buble.gif"
+                  onClick={() => toggleCollapse(0)}
+                  style={{ 
+                    cursor: 'pointer',
+                    display: imagesLoaded['escape'] ? 'block' : 'none'
+                  }}
+                  onLoad={() => handleImageLoad('escape')}
+                />
+                <Card.Body>
+                  <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Escape Room (Global Game Jam 2025)</Card.Title>
+                  <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+                  Escape Michael Bublé's bubble gum factory in this quirky Unity game! Use bubble gum to float, dodge hazards, and reach the exit before running out or getting caught.
+                  <div class="skills2" className="pt-4 d-flex justify-content-around">
+                      <div><img alt="Unity icon" width="150px" src="./assets/skills/unity.svg" /></div>
+                      <div><img alt="C# icon" width="150px" src="./assets/skills/CSharp.svg" /></div>
+                    </div>
+                  </Card.Text>
+                  <div className="d-flex justify-content-center gap-2">
+                      <Button className="w-50 mb-4 mt-1" variant="light" href="https://perfectoctogon.itch.io/escape-michael-bubles-bubblegum-factory" target="_blank">
+                        Play Game Now
+                      </Button>
+                      <Button className="w-50 mb-4 mt-1" variant="light" href="https://github.com/KevinDal2027/GlobalGamejam2025" target="_blank">
+                        Visit on GitHub
+                      </Button>
+                    </div>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+            <Carousel.Item >
+              <Collapse in={open === 0}>
                 <div className="project-details text-white p-3">
                   <Button
                     onClick={() => toggleCollapse(null)}
@@ -405,30 +530,46 @@ const Projects = () => {
                   </div>
                 </div>
               </Collapse>
-            <Card className="project-card">
-              <Card.Img variant="top" alt ="Kevin Web gif" src="./K.png" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}/>
-              <Card.Body>
-                <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Portfolio Website</Card.Title>
-                <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                Well... You are on it right now!!! I don't think I need description for this one. Check it out for yourself!!!
-                Click on About to find out more about me, Projects to see my work, and maybe checkout my LinkedIn and GitHub.
-                
-                <div class = "skillsWrap6" className='pb-5'>
-                   <div class = "item_6 item1_6"><img alt = "React JS icon" width= "150px" src='./assets/skills/React.js.svg' /></div>
-                   <div class = "item_6 item2_6"><img alt = "Bootstrap icon" width= "150px" src='./assets/skills/Bootstrap.svg' /></div>
-                   <div class = "item_6 item3_6"><img alt = "Vite icon" width= "150px" src='./assets/skills/Vite.svg' /></div>
-                   <div class = "item_6 item4_6"><img alt = "HTML icon" width= "150px" src='./assets/skills/HTML.svg' /></div>
-                   <div class = "item_6 item5_6"><img alt = "CSS icon" width= "150px" src='./assets/skills/CSS.svg' /></div>
-                   <div class = "item_6 item6_6"><img alt = "JavaScript icon" width= "150px" src='./assets/skills/JavaScript.svg' /></div>
-                 </div>
-                </Card.Text>
-                <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/KevinPortfolio" target="_blank">
-                  Visit on GitHub
-                </Button>
-              </Card.Body>
-            </Card>
-          </Carousel.Item>
-        </Carousel>
+              <Card className="project-card">
+                {!imagesLoaded['portfolio'] && (
+                  <div className="image-loading-placeholder">
+                    <Spinner animation="border" variant="light" size="sm" />
+                  </div>
+                )}
+                <Card.Img
+                  variant="top"
+                  alt="Kevin Web gif"
+                  src="./K.png"
+                  onClick={() => toggleCollapse(0)}
+                  style={{ 
+                    cursor: 'pointer',
+                    display: imagesLoaded['portfolio'] ? 'block' : 'none'
+                  }}
+                  onLoad={() => handleImageLoad('portfolio')}
+                />
+                <Card.Body>
+                  <Card.Title className="text-white fs-2 fw-bold" onClick={() => toggleCollapse(0)} style={{ cursor: 'pointer' }}>Portfolio Website</Card.Title>
+                  <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
+                  Well... You are on it right now!!! I don't think I need description for this one. Check it out for yourself!!!
+                  Click on About to find out more about me, Projects to see my work, and maybe checkout my LinkedIn and GitHub.
+                  
+                  <div class = "skillsWrap6" className='pb-5'>
+                     <div class = "item_6 item1_6"><img alt = "React JS icon" width= "150px" src='./assets/skills/React.js.svg' /></div>
+                     <div class = "item_6 item2_6"><img alt = "Bootstrap icon" width= "150px" src='./assets/skills/Bootstrap.svg' /></div>
+                     <div class = "item_6 item3_6"><img alt = "Vite icon" width= "150px" src='./assets/skills/Vite.svg' /></div>
+                     <div class = "item_6 item4_6"><img alt = "HTML icon" width= "150px" src='./assets/skills/HTML.svg' /></div>
+                     <div class = "item_6 item5_6"><img alt = "CSS icon" width= "150px" src='./assets/skills/CSS.svg' /></div>
+                     <div class = "item_6 item6_6"><img alt = "JavaScript icon" width= "150px" src='./assets/skills/JavaScript.svg' /></div>
+                   </div>
+                  </Card.Text>
+                  <Button className="w-50 mb-4 mx-auto d-block" variant="light" href="https://github.com/KevinDal2027/KevinPortfolio" target="_blank">
+                    Visit on GitHub
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+          </Carousel>
+        )}
       </div>
     </div>
   );
