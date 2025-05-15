@@ -40,7 +40,7 @@ const Home = () => {
           </Col>
           <Col lg={6} className="d-none d-lg-block">
             <div className="hero-image-container">
-              <img src='./homeBG.png' alt="Background" className="hero-image" />
+              <img src='./homeBG.jpeg' alt="Background" className="hero-image w-75" />
             </div>
           </Col>
         </Row>
