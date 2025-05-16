@@ -221,6 +221,9 @@
 
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
+  .home-container{
+    padding-left: 10%;
+  }
   .hero-content {
     padding: 1rem 0;
   }
