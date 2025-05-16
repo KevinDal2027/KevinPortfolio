@@ -42,25 +42,25 @@ const Home = () => {
   return (
     <div className="home-container">
       <ParticleBackground />
-      <Container>
-        <Row className="align-items-center min-vh-100">
-          <Col lg={6} className="text-start">
+      <Container fluid>
+        <Row className="align-items-center justify-content-center min-vh-100">
+          <Col xs={7} lg={6} className="text-center">
             <div className="hero-content">
               <h1 className="display-4 fw-bold mb-4">
                 Hey, I'm <span className="highlight">Kevin Nguyen</span>
               </h1>
               <p className="lead mb-4">
-                I'm a second-year <span className="passion">Computer Science</span> student at Dalhousie University, passionate about <span className="passion">Data Science</span>, <span className="passion">Machine Learning</span>, <span className="passion">Software Development</span> and <span className="passion">Full-Stack Development</span>.
+                I'm a second-year <span className="major">Computer Science</span> student at Dalhousie University, passionate about <span className="passion">Machine Learning</span>, <span className="passion">Full-Stack Development</span> and <span className="passion">Cloud Infrastructure</span>.
               </p>
-              <div className="cta-buttons">
-                <Nav.Link as={Link} to="/about" className="btn btn-primary me-3 aboutMeBtn mb-1">
+              <div className="cta-buttons d-flex justify-content-center gap-3">
+                <Nav.Link as={Link} to="/about" className="btn btn-primary aboutMeBtn mb-1">
                   About Me
                 </Nav.Link>
                 <Nav.Link as={Link} to="/projects" className="btn btn-primary projectsBtn mb-1">
                   View Projects
                 </Nav.Link>
               </div>
-              <div className="social-links mt-4">
+              <div className="social-links mt-4 d-flex justify-content-center">
                 <a href="https://linkedin.com/in/kevin-nguyen-dal" target="_blank" rel="noopener noreferrer" className="social-link">
                   <FaLinkedin />
                 </a>
@@ -73,13 +73,13 @@ const Home = () => {
               </div>
             </div>
           </Col>
-          <Col lg={6} className="d-none d-lg-block">
+          <Col xs={5} lg={6} className="d-flex justify-content-center align-items-center">
             <div className="hero-image-container">
               <img 
                 ref={imageRef}
                 src='./homeBG.jpeg' 
                 alt="Background" 
-                className="hero-image w-75" 
+                className="hero-image" 
               />
             </div>
           </Col>

@@ -14,16 +14,41 @@
 
 .hero-content {
   padding: 2rem 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content .lead {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+  color: var(--text-color);
+  margin: 0 auto;
+  max-width: 700px;
 }
 
 .highlight {
-  color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
   display: inline-block;
 }
@@ -35,8 +60,8 @@
   height: 8px;
   bottom: -4px;
   left: 0;
-  background-color: var(--primary-color);
-  opacity: 0.2;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  opacity: 0.3;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -47,11 +72,43 @@
   transform-origin: left;
 }
 
-.passion {
-  color: var(--accent-color);
-  font-weight: 500;
+.major {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   position: relative;
   display: inline-block;
+}
+
+.major::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #FF6B6B, #FF8E53);
+  opacity: 0.5;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.major:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.passion {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--accent-color);
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
 }
 
 .passion::after {
@@ -61,8 +118,8 @@
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: var(--accent-color);
-  opacity: 0.3;
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  opacity: 0.5;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -73,15 +130,70 @@
   transform-origin: left;
 }
 
+.cta-buttons {
+  margin: 2rem 0;
+}
+
+.cta-buttons .btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+  min-width: 160px;
+}
+
+.social-links {
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.social-link:hover {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  background: rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Dark mode adjustments */
+.dark-mode .hero-content h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .hero-content .lead {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .passion {
+  color: #4ECDC4;
+  text-shadow: 0 0 8px rgba(78, 205, 196, 0.3);
+}
+
+.dark-mode .highlight {
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+}
+
+.dark-mode .major {
+  text-shadow: 0 0 8px rgba(255, 107, 107, 0.3);
+}
+
 .hero-image-container {
   position: relative;
-  padding: 2rem;
+  padding: 1.5rem;
   perspective: 1000px;
+  width: 100%;
 }
 
 .hero-image {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   height: auto;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
@@ -107,81 +219,73 @@
   transform: translateY(-10px);
 }
 
-.cta-buttons {
-  margin: 2rem 0;
-}
-
-.cta-buttons .btn {
-  padding: 0.75rem 2rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.social-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.social-link {
-  color: var(--text-color);
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background: rgba(var(--primary-color-rgb), 0.1);
-}
-
-.social-link:hover {
-  color: var(--primary-color);
-  transform: translateY(-3px);
-  background: rgba(var(--primary-color-rgb), 0.2);
-}
-
-/* Dark mode adjustments */
-.dark-mode .hero-image {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .social-link {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .social-link:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.aboutMeBtn, .projectsBtn{
-  width: 100%;
-}
-
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .hero-content {
-    text-align: center;
-    padding: 4rem 0;
+    padding: 1rem 0;
   }
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
-  .cta-buttons {
-    justify-content: center;
+  .hero-content .lead {
+    font-size: 1.1rem;
+  }
+
+  .hero-image-container {
+    padding: 0.5rem;
+  }
+
+  .hero-image {
+    width: 100%;
+    min-width: 160px;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .hero-image::after {
+    border-radius: 50%;
+  }
+
+  .cta-buttons .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    min-width: 140px;
   }
 
   .social-links {
-    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social-link {
+    font-size: 1.2rem;
+    padding: 0.4rem;
   }
 }
 
 @media (max-width: 767.98px) {
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .hero-content .lead {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-image {
+    min-width: 140px;
+    max-width: 180px;
   }
 
   .cta-buttons .btn {
     width: 100%;
     margin: 0.5rem 0;
+    font-size: 0.9rem;
+    min-width: 120px;
   }
 }
