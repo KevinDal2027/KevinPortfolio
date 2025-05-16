@@ -7,10 +7,23 @@ import { Link } from 'react-router-dom';
 const About = ({ darkMode }) => {
   const [showImages, setShowImages] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
+  const [flippedCards, setFlippedCards] = useState(new Set());
 
   const toggleImages = (imagePath) => {
     setCurrentImage(imagePath);
     setShowImages(true);
+  };
+
+  const handleCardClick = (index) => {
+    setFlippedCards(prev => {
+      const newFlipped = new Set(prev);
+      if (newFlipped.has(index)) {
+        newFlipped.delete(index);
+      } else {
+        newFlipped.add(index);
+      }
+      return newFlipped;
+    });
   };
 
   const calculateDaysSince = (startDate) => {
@@ -81,7 +94,12 @@ const About = ({ darkMode }) => {
       <div id="aboutcontent">
         <div className={`about-page ${darkMode ? 'dark-mode' : ''}`}>
           {cards.map((card, index) => (
-            <div className="flashcard" key={index} style={{ '--card-index': index }}>
+            <div 
+              className={`flashcard ${flippedCards.has(index) ? 'flipped' : ''}`} 
+              key={index} 
+              style={{ '--card-index': index }}
+              onClick={() => handleCardClick(index)}
+            >
               <div className="flashcard-inner">
                 <div className="flashcard-front">
                   <div className="flashcard-icon">{card.icon}</div>
