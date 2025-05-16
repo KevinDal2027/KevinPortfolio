@@ -50,7 +50,7 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={handleSelect} className="brand">
           <img
-            src="./kevinLogo.svg"
+            src="./signature.svg"
             alt="Kevin Nguyen"
             className="logo"
             style={{
@@ -61,7 +61,10 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
 
         <Navbar.Toggle 
           aria-controls="responsive-navbar" 
-          onClick={handleToggle}
+          onClick={() => {
+            handleToggle();
+            setClicked(!clicked);
+          }}
           className="custom-toggler"
         >
           <span className="navbar-toggler-icon"></span>
