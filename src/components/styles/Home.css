@@ -2,7 +2,14 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
   background: linear-gradient(135deg, var(--bg-color) 0%, rgba(var(--primary-color-rgb), 0.05) 100%);
+}
+
+.home-container > * {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
@@ -69,6 +76,7 @@
 .hero-image-container {
   position: relative;
   padding: 2rem;
+  perspective: 1000px;
 }
 
 .hero-image {
@@ -76,8 +84,23 @@
   max-width: 500px;
   height: auto;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  pointer-events: none;
 }
 
 .hero-image:hover {

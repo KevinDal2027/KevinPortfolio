@@ -54,7 +54,7 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
             alt="Kevin Nguyen"
             className="logo"
             style={{
-              filter: darkMode ? 'invert(1)' : 'invert(0)',
+              filter: darkMode ? 'invert(48%) sepia(95%) saturate(427%) hue-rotate(115deg) brightness(97%) contrast(101%)' : 'invert(0)',
             }}
           />
         </Navbar.Brand>
