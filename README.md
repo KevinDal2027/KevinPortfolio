@@ -52,5 +52,5 @@ KevinPortfolio/
 
 Kevin Nguyen
 - GitHub: [KevinDal2027](https://github.com/KevinDal2027)
-- LinkedIn: [KevinDal2027](https://linkedin.com/in/kevin-nguyen-dal)
+- LinkedIn: [Kevin Nguyen](https://linkedin.com/in/kevin-nguyen-dal)
 
