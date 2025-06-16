@@ -2,7 +2,7 @@
 const projects = [
   {
     id: 'fcsVM',
-    title: 'Dalhousie\'s University FCS Virtual Machines',
+    title: 'Dalhousie University FCS Virtual Machines',
     thumbnail: './assets/projectThumbnails/fcsVM.png',
     tag: 'Cloud',
     date: '2025-06',
