@@ -56,7 +56,7 @@ const Home = () => {
                 <Nav.Link as={Link} to="/about" className="btn btn-primary aboutMeBtn mb-1">
                   About Me
                 </Nav.Link>
-                <Nav.Link as={Link} to="/projects" className="btn btn-primary projectsBtn mb-1">
+                <Nav.Link as={Link} to="/gallery" className="btn btn-primary projectsBtn mb-1">
                   View Projects
                 </Nav.Link>
               </div>

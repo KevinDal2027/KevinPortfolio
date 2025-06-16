@@ -1,5 +1,6 @@
 import React from 'react';
 import projects from './projectData';
+import ParticleBackground from './ParticleBackground';
 import './styles/Projects.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +14,7 @@ const ProjectsGallery = () => {
 
   return (
     <div className="projects-section">
+      <ParticleBackground />
       <h2 className="gallery-header">Projects Gallery</h2>
       <div className="projects-container">
         <div className="gallery-grid">

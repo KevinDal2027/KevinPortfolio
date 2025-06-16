@@ -1,13 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LazyLoad from 'react-lazyload';
-import './styles/About.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import { FaUser, FaBasketballBall, FaCode, FaChess, FaMusic, FaGraduationCap } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import ParticleBackground from './ParticleBackground';
+import './styles/About.css';
 
 const About = ({ darkMode }) => {
   const [showImages, setShowImages] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
   const [flippedCards, setFlippedCards] = useState(new Set());
+  const [years, setYears] = useState(0);
+  const [days, setDays] = useState(0);
+
+  useEffect(() => {
+    const calculateTime = () => {
+      const startDate = new Date('2019-09-01T00:00:00');
+      const now = new Date();
+      const diffTime = Math.abs(now.getTime() - startDate.getTime());
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      setDays(diffDays);
+      setYears(Math.floor(diffDays / 365));
+    };
+    calculateTime();
+
+    const intervalId = setInterval(calculateTime, 1000 * 60 * 60 * 24); // Update daily
+    return () => clearInterval(intervalId);
+  }, []);
 
   const toggleImages = (imagePath) => {
     setCurrentImage(imagePath);
@@ -26,29 +45,11 @@ const About = ({ darkMode }) => {
     });
   };
 
-  const calculateDaysSince = (startDate) => {
-    const start = new Date(startDate);
-    const now = new Date();
-    const diffTime = now - start;
-    return Math.floor(diffTime / (1000 * 60 * 60 * 24));
-  };
-
-  const days = calculateDaysSince('2018-08-01');
-
-  const calculateYearsSince = (startDate) => {
-    const start = new Date(startDate);
-    const now = new Date();
-    const diffTime = now - start;
-    return Math.ceil(diffTime / (365000*60*60*24));
-  };
-
-  const year = calculateYearsSince('2018-08-01');
-
   const cards = [
     {
       title: "Background",
       icon: <FaUser />,
-      content: `Originally from Vietnam, I moved to Canada ${year} years ago or ${days} days ago, embracing new experiences that have shaped my growth. I've always been passionate about exploring new opportunities, learning new skills, and pushing my boundaries.`,
+      content: `Originally from Vietnam, I moved to Canada ${years} years ago or ${days} days ago, embracing new experiences that have shaped my growth. I've always been passionate about exploring new opportunities, learning new skills, and pushing my boundaries.`,
       image: null
     },
     {
@@ -90,13 +91,14 @@ const About = ({ darkMode }) => {
   ];
 
   return (
-    <div className="about-container">
+    <div className={`about-container ${darkMode ? 'dark-mode' : ''}`}>
+      <ParticleBackground />
       <div id="aboutcontent">
-        <div className={`about-page ${darkMode ? 'dark-mode' : ''}`}>
+        <div className="about-page">
           {cards.map((card, index) => (
-            <div 
-              className={`flashcard ${flippedCards.has(index) ? 'flipped' : ''}`} 
-              key={index} 
+            <div
+              className={`flashcard ${flippedCards.has(index) ? 'flipped' : ''}`}
+              key={index}
               style={{ '--card-index': index }}
               onClick={() => handleCardClick(index)}
             >
@@ -111,14 +113,14 @@ const About = ({ darkMode }) => {
                   <div className="flashcard-content">
                     {card.content}
                     {card.image && (
-                      <div 
-                        className="image-trigger" 
+                      <div
+                        className="clickable-text"
                         onClick={(e) => {
                           e.stopPropagation();
                           toggleImages(card.image);
                         }}
                       >
-                        <span className="clickable-text">View Photos</span>
+                        View Photos
                       </div>
                     )}
                   </div>
@@ -132,9 +134,7 @@ const About = ({ darkMode }) => {
       {showImages && (
         <div className="image-popup" onClick={() => setShowImages(false)}>
           <div className="image-gallery-popup">
-            <LazyLoad height={200} offset={100}>
-              <img src={currentImage} alt="Lifestyle" />
-            </LazyLoad>
+            <img src={currentImage} alt="Lifestyle" />
           </div>
           <button className="close-button" onClick={() => setShowImages(false)}>×</button>
         </div>

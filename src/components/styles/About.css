@@ -501,22 +501,24 @@
 }
 
 .image-trigger {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--primary-color);
   cursor: pointer;
+  font-weight: 500;
   transition: all 0.3s ease;
-  background: rgba(var(--primary-color-rgb), 0.1);
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1rem 0;
+  text-decoration: none;
+  text-align: center;
 }
 
 .image-trigger:hover {
+  background: none;
+  color: var(--secondary-color);
   transform: translateY(-2px);
-  background: rgba(var(--primary-color-rgb), 0.15);
 }
 
 .image-trigger .icon {
@@ -615,6 +617,9 @@
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .flashcard-icon {

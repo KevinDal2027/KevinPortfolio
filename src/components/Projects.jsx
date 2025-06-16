@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, Card, Button, Collapse, Spinner, Modal } from 'react-bootstrap';
 import { FaReact } from 'react-icons/fa';
+import ParticleBackground from './ParticleBackground';
 import './styles/Projects.css';
 import projects from './projectData';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -171,7 +172,9 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                           {project.skills && project.skills.length > 0 && (
                             <div
                               className={
-                                project.skills.length === 7
+                                project.skills.length === 11
+                                  ? 'skillsWrap11 pb-5'
+                                  : project.skills.length === 7
                                   ? 'skillsWrap7 pb-5'
                                   : project.skills.length === 6
                                   ? 'skillsWrap6 pb-5'
@@ -182,7 +185,9 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                                 <div
                                   key={i}
                                   className={
-                                    project.skills.length === 7
+                                    project.skills.length === 11
+                                      ? `item_11 item${i + 1}_11`
+                                      : project.skills.length === 7
                                       ? `item_7 item${i + 1}`
                                       : project.skills.length === 6
                                       ? `item_6 item${i + 1}_6`
@@ -195,8 +200,8 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                             </div>
                           )}
                         </Card.Text>
-                        {project.links?.website && (
-                          <div className="visit-buttons">
+                        <div className="visit-buttons">
+                          {project.links?.website && (
                             <Button
                               className="visit-website"
                               variant="light"
@@ -205,18 +210,18 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                             >
                               View Website
                             </Button>
-                            {project.links?.github && (
-                              <Button
-                                className="visit-github"
-                                variant="light"
-                                href={project.links.github}
-                                target="_blank"
-                              >
-                                View GitHub
-                              </Button>
-                            )}
-                          </div>
-                        )}
+                          )}
+                          {project.links?.github && (
+                            <Button
+                              className="visit-github"
+                              variant="light"
+                              href={project.links.github}
+                              target="_blank"
+                            >
+                              View GitHub
+                            </Button>
+                          )}
+                        </div>
                       </Card.Body>
                     </Card>
                   </Carousel.Item>
@@ -232,6 +237,7 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
   // Default (non-modal) rendering
   return (
     <div className="projects-section">
+      <ParticleBackground />
       <div className="button-container">
         <Button
           variant="outline-light"
@@ -316,7 +322,9 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                       {project.skills && project.skills.length > 0 && (
                         <div
                           className={
-                            project.skills.length === 7
+                            project.skills.length === 11
+                              ? 'skillsWrap11 pb-5'
+                              : project.skills.length === 7
                               ? 'skillsWrap7 pb-5'
                               : project.skills.length === 6
                               ? 'skillsWrap6 pb-5'
@@ -327,7 +335,9 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                             <div
                               key={i}
                               className={
-                                project.skills.length === 7
+                                project.skills.length === 11
+                                  ? `item_11 item${i + 1}_11`
+                                  : project.skills.length === 7
                                   ? `item_7 item${i + 1}`
                                   : project.skills.length === 6
                                   ? `item_6 item${i + 1}_6`
@@ -340,8 +350,8 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                         </div>
                       )}
                     </Card.Text>
-                    {project.links?.website && (
-                      <div className="visit-buttons">
+                    <div className="visit-buttons">
+                      {project.links?.website && (
                         <Button
                           className="visit-website"
                           variant="light"
@@ -350,18 +360,18 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                         >
                           View Website
                         </Button>
-                        {project.links?.github && (
-                          <Button
-                            className="visit-github"
-                            variant="light"
-                            href={project.links.github}
-                            target="_blank"
-                          >
-                            View GitHub
-                          </Button>
-                        )}
-                      </div>
-                    )}
+                      )}
+                      {project.links?.github && (
+                        <Button
+                          className="visit-github"
+                          variant="light"
+                          href={project.links.github}
+                          target="_blank"
+                        >
+                          View GitHub
+                        </Button>
+                      )}
+                    </div>
                   </Card.Body>
                 </Card>
               </Carousel.Item>

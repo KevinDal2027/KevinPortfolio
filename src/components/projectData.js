@@ -1,12 +1,41 @@
 // projectData.js
 const projects = [
   {
+    id: 'fcsVM',
+    title: 'Dalhousie\'s University FCS Virtual Machines',
+    thumbnail: './assets/projectThumbnails/fcsVM.png',
+    tag: 'Cloud',
+    date: '2025-06',
+    description: 'A GPU-powered and securely administered virtual infrastructure for Dalhousie CS students and researchers, integrating AD authentication, VMware Horizon access, and controlled sudo privileges.',
+    details: {
+      inspiration: 'The project was initiated to provide Dalhousie CS students with a high-performance virtual environment that supports computational tasks and deep learning, while ensuring administrative control and seamless access.',
+      timeline: 'From May to June 2025, I worked as a Systems Technician Co-op under Dal ITS, collaborating with the FCS infrastructure team and server admins.',
+      learning: 'I learned how to integrate Linux VMs into an enterprise infrastructure using VMware Horizon, troubleshoot domain authentication issues, configure GPU drivers, and deploy secure access policies and sudo restrictions.'
+    },
+    links: {
+      website: '',
+    },
+    skills: [
+      { alt: 'Ubuntu icon', src: './assets/skills/Ubuntu.svg' },
+      { alt: 'Linux icon', src: './assets/skills/Linux.svg' },
+      { alt: 'Bash icon', src: './assets/skills/Bash.svg' },
+      { alt: 'Systemd icon', src: './assets/skills/Systemd.svg' },
+      { alt: 'VMware icon', src: './assets/skills/VMware.svg' },
+      { alt: 'vSphere icon', src: './assets/skills/vSphere.svg' },
+      { alt: 'Horizon icon', src: './assets/skills/Horizon.svg' },
+      { alt: 'Active Directory icon', src: './assets/skills/AD.svg' },
+      { alt: 'GPO icon', src: './assets/skills/GPO.svg' },
+      { alt: 'SSSD icon', src: './assets/skills/SSSD.svg' },
+      { alt: 'OpenSSL icon', src: './assets/skills/OpenSSL.svg' },
+    ]
+  },
+  {
     id: 'chemAR',
     title: 'ChemAR',
     thumbnail: './assets/projectThumbnails/ChemAR.gif',
-    tag: 'GIF',
+    tag: 'Education Software',
     date: '2024-12',
-    description: 'ChemAR is a tool that helps students and educators explore complex molecular structures in an interactive AR environment, making chemistry concepts more accessible and engaging.',
+    description: 'An AR-based chemistry education platform built to help visualize complex molecules in 3D, enhancing engagement and learning for Dalhousie Chemistry students.',
     details: {
       inspiration: 'ChemAR was created to make chemistry interactive and engaging by visualizing molecules in 3D, helping students explore complex structures intuitively.',
       timeline: 'From September to December 2024, I collaborated as a junior developer with a team of senior and junior developers, guided by our Development Director.',
@@ -29,7 +58,7 @@ const projects = [
     id: 'vision',
     title: 'Emission Vision (Algae Correlation)',
     thumbnail: './assets/projectThumbnails/CO2Vision.gif',
-    tag: 'GIF',
+    tag: 'Climate Change',
     date: '2024-10',
     description: 'This project maps algal growth against CO2 emissions in Alberta to identify spatial correlations and trends.',
     details: {
@@ -54,7 +83,7 @@ const projects = [
     id: 'clearCal',
     title: 'ClearCal AI (Lesser Stress for Best)',
     thumbnail: './assets/projectThumbnails/ClearCal.gif',
-    tag: 'GIF',
+    tag: 'Generative AI',
     date: '2025-01',
     description: 'ClearCal AI is an intelligent task manager that automates scheduling with AI and Google Calendar integration, reducing user\'s stress by helping them manage their time more effectively. It features speech-to-text input to generate detailed action plans to streamline productivity.',
     details: {
@@ -80,7 +109,7 @@ const projects = [
     id: 'taskManager',
     title: 'Task Manager – ASP.NET Core & EF Core',
     thumbnail: './assets/projectThumbnails/taskManager.png',
-    tag: 'New',
+    tag: 'API Development',
     date: '2025-01',
     description: 'This is a lightweight and efficient task management app built with ASP.NET Core and EF Core, designed to help users organize and prioritize their tasks effortlessly. It features a clean API for seamless task creation, updates, and deletion, with automatic sorting by due date and priority.',
     details: {
@@ -104,7 +133,7 @@ const projects = [
     id: 'emotion',
     title: 'Emotion Analysis and Prediction',
     thumbnail: './assets/projectThumbnails/Emotion.svg',
-    tag: 'New',
+    tag: 'Machine Learning',
     date: '2024-12',
     description: 'This emotion analysis and prediction project uses NLP techniques to analyze text and predict emotions with machine learning models. It uses spaCy for processing, Matplotlib and pandas for visualization, and evaluates models like Linear Regression and Decision Trees for accuracy.',
     details: {
@@ -129,7 +158,7 @@ const projects = [
     id: 'weather',
     title: 'Weather App',
     thumbnail: './assets/projectThumbnails/Weather.gif',
-    tag: 'GIF',
+    tag: 'First Project',
     date: '2024-05',
     description: 'A Java Swing GUI app that retrieves and displays real-time weather data from OpenWeatherAPI. It integrates JSON parsing and HTTP connection handling to ensure accurate and reliable weather updates, providing users with a seamless experience.',
     details: {
@@ -153,7 +182,7 @@ const projects = [
     id: 'escape',
     title: 'Escape Room (Global Game Jam 2025)',
     thumbnail: './assets/projectThumbnails/buble.gif',
-    tag: 'GIF',
+    tag: 'Game Development',
     date: '2025-01',
     description: 'Escape Michael Bublé\'s bubble gum factory in this quirky Unity game! Use bubble gum to float, dodge hazards, and reach the exit before running out or getting caught.',
     details: {
@@ -174,7 +203,7 @@ const projects = [
     id: 'portfolio',
     title: 'Portfolio Website',
     thumbnail: './K.png',
-    tag: 'New',
+    tag: 'Portfolio',
     date: '2025-02',
     description: 'Well... You are on it right now!!! I don\'t think I need description for this one. Check it out for yourself!!! Click on About to find out more about me, Projects to see my work, and maybe checkout my LinkedIn and GitHub.',
     details: {
