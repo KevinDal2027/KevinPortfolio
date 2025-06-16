@@ -11,9 +11,20 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
   const [loading, setLoading] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState({});
   const [carouselIndex, setCarouselIndex] = useState(initialIndex);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [expandedDescription, setExpandedDescription] = useState({});
   const navigate = useNavigate();
   const location = useLocation();
   
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   useEffect(() => {
     setCarouselIndex(initialIndex);
   }, [initialIndex]);
@@ -64,6 +75,48 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
   const handleSelect = (selectedIndex) => {
     setCarouselIndex(selectedIndex);
     setOpen(null);
+  };
+
+  const toggleDescription = (projectId) => {
+    setExpandedDescription(prev => ({
+      ...prev,
+      [projectId]: !prev[projectId]
+    }));
+  };
+
+  const getDescriptionText = (project) => {
+    const description = project.description;
+    const charLimit = 100;
+    if (isMobile && description.length > charLimit && !expandedDescription[project.id]) {
+      return (
+        <>
+          {`${description.substring(0, charLimit)}... `}
+          <Button
+            variant="link"
+            className="read-more-btn"
+            onClick={() => toggleDescription(project.id)}
+            style={{ color: '#00ff00', padding: 0, border: 'none' }}
+          >
+            Read More
+          </Button>
+        </>
+      );
+    } else if (isMobile && expandedDescription[project.id]) {
+      return (
+        <>
+          {description}
+          <Button
+            variant="link"
+            className="read-less-btn"
+            onClick={() => toggleDescription(project.id)}
+            style={{ color: '#00ff00', padding: 0, border: 'none' }}
+          >
+            Read Less
+          </Button>
+        </>
+      );
+    }
+    return description;
   };
 
   // Use Modal for gallery pop-up to prevent jiggering
@@ -168,7 +221,7 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                           {project.title}
                         </Card.Title>
                         <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                          {project.description}
+                          {getDescriptionText(project)}
                           {project.skills && project.skills.length > 0 && (
                             <div
                               className={
@@ -318,7 +371,7 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                       {project.title}
                     </Card.Title>
                     <Card.Text className="text-white" style={{ fontSize: '1rem' }}>
-                      {project.description}
+                      {getDescriptionText(project)}
                       {project.skills && project.skills.length > 0 && (
                         <div
                           className={
