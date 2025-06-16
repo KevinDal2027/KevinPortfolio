@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website showcasing my skills, projects, and professional journey.
 
+Deployed at https://kevin-nguyen-dalhousie.vercel.app
+
 ## 🚀 Features
 
 - Responsive design for all devices
