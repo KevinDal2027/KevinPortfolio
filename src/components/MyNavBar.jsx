@@ -90,6 +90,14 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
             </Nav.Link>
             <Nav.Link 
               as={Link} 
+              to="/experience" 
+              className={`nav-link ${isActive('/experience') ? 'active' : ''}`}
+              onClick={handleSelect}
+            >
+              Experience
+            </Nav.Link>
+            <Nav.Link 
+              as={Link} 
               to="/gallery" 
               className={`nav-link ${isActive('/gallery') ? 'active' : ''}`}
               onClick={handleSelect}

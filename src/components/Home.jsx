@@ -50,7 +50,7 @@ const Home = () => {
                 Hey, I'm <span className="highlight">Kevin Nguyen</span>
               </h1>
               <p className="lead mb-4">
-                I'm a second-year <span className="major">Computer Science</span> student at Dalhousie University, passionate about <span className="passion">Machine Learning</span>, <span className="passion">Cloud Infrastructure</span>, exploring into <span className="passion">Cyber Security</span>.
+                I'm a second-year <span className="major">Computer Science</span> student at Dalhousie University, passionate to learn about <span className="passion">Machine Learning</span>, <span className="passion">Cloud Infrastructure</span>, and <span className="passion">Cyber Security</span>.
                 {/* <span className="passion">Full-Stack Development</span> and <span className="passion">Cloud Infrastructure</span>. */}
               </p>
               <div className="cta-buttons d-flex justify-content-center gap-3">

@@ -81,9 +81,14 @@ const About = ({ darkMode }) => {
             <li><strong>Back-end</strong>: Node.js, Express.js, ASP.NET</li>
             <li><strong>Data & ML</strong>: spaCy, numPy, Pandas, Scikit-learn</li>
           </ul>
-          <Link to="/projects" className="clickable-text">
-            View Projects
-          </Link>
+          <div className="d-flex justify-content-center gap-1">
+            <Link to="/projects" className="clickable-text">
+              View Projects
+            </Link>
+            <Link to="/experience" className="clickable-text">
+              View Experience
+            </Link>
+          </div>
         </>
       ),
       image: null

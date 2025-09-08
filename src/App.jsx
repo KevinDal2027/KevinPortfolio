@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import MyNavbar from './components/MyNavBar';
 import Home from './components/Home';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import About from './components/About';
 import ProjectsGallery from './components/ProjectsGallery';
@@ -26,6 +27,7 @@ function App() {
       <MyNavbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/experience" element={<Experience />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About darkMode={darkMode} />} />
         <Route
