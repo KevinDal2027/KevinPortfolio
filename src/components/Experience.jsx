@@ -5,6 +5,16 @@ import './styles/Experience.css';
 const experiences = [
   {
     org: 'Dalhousie University Information Technology Services',
+    role: 'Service Desk Associate – Part-time',
+    location: 'Halifax, Nova Scotia',
+    date: 'September 2025 - Present',
+    bullets: [
+      'Provided technical support and assistance for campus computer labs and IT services.',
+      'Monitored systems through LabStats, reported issues, and performed basic troubleshooting.'
+    ]
+  },
+  {
+    org: 'Dalhousie University Information Technology Services',
     role: 'IT Technician - Co-op Internship',
     location: 'Halifax, Nova Scotia',
     date: 'May 2025 - September 2025',

@@ -1,6 +1,32 @@
 // projectData.js
 const projects = [
   {
+    id: 'ettWorkshop',
+    title: 'Empower Tech Tutor Workshop',
+    thumbnail: './assets/projectThumbnails/ETTLogo.svg',
+    tag: 'Client Project',
+    date: '2025-09',
+    description: 'A modern, mobile-first web application for Empower Tech Tutor to manage workshop posts and schedules. Built with React and Firebase, it provides a clean interface for both admins and visitors with secure authentication and real-time data management.',
+    details: {
+      inspiration: 'I built the EmpowerTech Tutor Workshop web app to give Empower Tech Tutor a cleaner and more reliable way to handle workshop posts and schedules. The goal was to make something that is both easy for visitors to use and powerful enough for admins to manage content. I didn\'t want this to feel like a clunky CMS — instead, it\'s lightweight, mobile-first, and actually pleasant to use.',
+      timeline: 'Developed in September 2025 as a client project for Empower Tech Tutor, focusing on creating a modern, accessible platform for workshop management.',
+      learning: 'I learned how to build a complete full-stack application with React and Firebase, implement secure authentication with email-based admin access, create responsive mobile-first designs, and structure a modular codebase with separate services for Firestore operations. The project taught me client communication, requirements gathering, and delivering production-ready applications.'
+    },
+    links: {
+      website: 'https://empower-tech-tutor-workshop.vercel.app/',
+      github: 'https://github.com/KevinDal2027/EmpowerTechTutorWorkshop'
+    },
+    skills: [
+      { alt: 'React icon', src: './assets/skills/React.js.svg' },
+      { alt: 'JavaScript icon', src: './assets/skills/JavaScript.svg' },
+      { alt: 'CSS icon', src: './assets/skills/CSS.svg' },
+      { alt: 'HTML icon', src: './assets/skills/HTML.svg' },
+      { alt: 'Firebase icon', src: './assets/skills/firebase.svg' },
+      { alt: 'REST icon', src: './assets/skills/REST.svg' },
+      { alt: 'JSON icon', src: './assets/skills/JSON.svg' }
+    ]
+  },
+  {
     id: 'fcsVM',
     title: 'Dalhousie University FCS Virtual Machines',
     thumbnail: './assets/projectThumbnails/fcsVM.png',

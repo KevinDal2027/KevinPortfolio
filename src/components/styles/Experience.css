@@ -121,6 +121,26 @@
   border-color: rgba(255, 255, 255, 0.06);
 }
 
+.dark-mode .card-body {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .card-meta {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .org {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .bullets {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.dark-mode .bullets li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .dark-mode .dot {
   box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08), 0 0 18px rgba(78, 205, 196, 0.4);
 }
