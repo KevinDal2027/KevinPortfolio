@@ -1,6 +1,31 @@
 // projectData.js
 const projects = [
   {
+    id: 'wifiChannelScanner',
+    title: 'WiFi Channel Scanner',
+    thumbnail: './assets/projectThumbnails/WifiScanner.png',
+    tag: 'Network Tools',
+    date: '2025-02',
+    description: 'A Linux-based web application that scans nearby WiFi networks, analyzes channel usage, and suggests optimal channels for better network performance. Built with Flask and Python, it provides real-time network analysis with a clean web interface for network administrators and power users.',
+    details: {
+      inspiration: 'I built this WiFi Channel Scanner to solve the common problem of WiFi interference and poor network performance. Living in an apartment building with many overlapping networks, I wanted a tool that could quickly analyze the WiFi environment and suggest the best channels to use. The goal was to create something that network administrators and tech-savvy users could rely on for optimizing their WiFi setup.',
+      timeline: 'Developed in February 2025 as a personal project to improve WiFi network performance and learn more about network analysis and Linux system programming.',
+      learning: 'I learned how to interact with Linux networking tools (iw, iwlist) through Python subprocess calls, implement real-time network scanning with proper error handling, create a Flask web application with form handling and flash messages, and work with Linux permissions and sudo requirements. The project taught me about WiFi channel allocation, signal analysis, and building system-level tools with web interfaces.'
+    },
+    links: {
+      github: 'https://github.com/KevinDal2027/WIFICHANNELSCANNER'
+    },
+    skills: [
+      { alt: 'Python icon', src: './assets/skills/Python.svg' },
+      { alt: 'Flask icon', src: './assets/skills/Flask.svg' },
+      { alt: 'Linux icon', src: './assets/skills/Linux.svg' },
+      { alt: 'HTML icon', src: './assets/skills/HTML.svg' },
+      { alt: 'CSS icon', src: './assets/skills/CSS.svg' },
+      { alt: 'JavaScript icon', src: './assets/skills/JavaScript.svg' },
+      { alt: 'Bash icon', src: './assets/skills/Bash.svg' }
+    ]
+  },
+    {
     id: 'ettWorkshop',
     title: 'Empower Tech Tutor Workshop',
     thumbnail: './assets/projectThumbnails/ETTLogo.svg',
