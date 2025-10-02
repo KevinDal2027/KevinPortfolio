@@ -93,7 +93,7 @@ const projects = [
       learning: 'This project enhanced my technical skills and taught me valuable collaboration and communication techniques for future endeavors.'
     },
     links: {
-      website: 'https://dalchemar.azurewebsites.net/'
+      website: 'https://archemapp.azurewebsites.net'
     },
     skills: [
       { alt: 'NodeJS icon', src: './assets/skills/NodeJS.svg' },
