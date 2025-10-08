@@ -205,30 +205,30 @@ const projects = [
       { alt: 'Spacy icon', src: './assets/skills/Spacy.svg' }
     ]
   },
-  {
-    id: 'weather',
-    title: 'Weather App',
-    thumbnail: './assets/projectThumbnails/Weather.gif',
-    tag: 'First Project',
-    date: '2024-05',
-    description: 'A Java Swing GUI app that retrieves and displays real-time weather data from OpenWeatherAPI. It integrates JSON parsing and HTTP connection handling to ensure accurate and reliable weather updates, providing users with a seamless experience.',
-    details: {
-      inspiration: 'It was the summer of 2024, on a hot sunny day. I was not going to go outside in that heat. So I told myself "let\'s just stay inside". Then I realized I was literally doing nothing. So I thought, "Stop sitting still and make a project". And as a first-year, I thought making a project is going to be so fun, so a simple Weather App it was.',
-      timeline: 'Developed in May 2024 during the 2 weeks.',
-      learning: 'That was my first time actually making a project in Java. I learned so much about different types of Java Framework and having to play around with Java.net for HTTP Connection was really fascinating.'
-    },
-    links: {
-      github: 'https://github.com/KevinDal2027/WeatherAppJava'
-    },
-    skills: [
-      { alt: 'Java icon', src: './assets/skills/Java.svg' },
-      { alt: 'Java Swing icon', src: './assets/skills/Swing.svg' },
-      { alt: 'Java Net icon', src: './assets/skills/Net.svg' },
-      { alt: 'JSON icon', src: './assets/skills/JSON.svg' },
-      { alt: 'OpenWeatherAPI icon', src: './assets/skills/openAPI.svg' },
-      { alt: 'REST icon', src: './assets/skills/REST.svg' }
-    ]
-  },
+  // {
+  //   id: 'weather',
+  //   title: 'Weather App',
+  //   thumbnail: './assets/projectThumbnails/Weather.gif',
+  //   tag: 'First Project',
+  //   date: '2024-05',
+  //   description: 'A Java Swing GUI app that retrieves and displays real-time weather data from OpenWeatherAPI. It integrates JSON parsing and HTTP connection handling to ensure accurate and reliable weather updates, providing users with a seamless experience.',
+  //   details: {
+  //     inspiration: 'It was the summer of 2024, on a hot sunny day. I was not going to go outside in that heat. So I told myself "let\'s just stay inside". Then I realized I was literally doing nothing. So I thought, "Stop sitting still and make a project". And as a first-year, I thought making a project is going to be so fun, so a simple Weather App it was.',
+  //     timeline: 'Developed in May 2024 during the 2 weeks.',
+  //     learning: 'That was my first time actually making a project in Java. I learned so much about different types of Java Framework and having to play around with Java.net for HTTP Connection was really fascinating.'
+  //   },
+  //   links: {
+  //     github: 'https://github.com/KevinDal2027/WeatherAppJava'
+  //   },
+  //   skills: [
+  //     { alt: 'Java icon', src: './assets/skills/Java.svg' },
+  //     { alt: 'Java Swing icon', src: './assets/skills/Swing.svg' },
+  //     { alt: 'Java Net icon', src: './assets/skills/Net.svg' },
+  //     { alt: 'JSON icon', src: './assets/skills/JSON.svg' },
+  //     { alt: 'OpenWeatherAPI icon', src: './assets/skills/openAPI.svg' },
+  //     { alt: 'REST icon', src: './assets/skills/REST.svg' }
+  //   ]
+  // },
   {
     id: 'escape',
     title: 'Escape Room (Global Game Jam 2025)',
