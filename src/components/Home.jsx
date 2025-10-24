@@ -43,16 +43,31 @@ const Home = () => {
     <div className="home-container">
       <ParticleBackground />
       <Container fluid>
-        <Row className="align-items-center justify-content-center min-vh-100">
-          <Col xs={7} lg={6} className="text-center">
+        <Row className="justify-content-center min-vh-100 pt-5">
+          <Col xs={12} lg={8} className="text-center">
             <div className="hero-content">
               <h1 className="display-4 fw-bold mb-4">
-                Hey, I'm <span className="highlight">Kevin Nguyen</span>
+                <span className="highlight">Kevin Nguyen</span>
               </h1>
               <p className="lead mb-4">
-                I'm a second-year <span className="major">Computer Science</span> student at Dalhousie University, passionate to learn about <span className="passion">Machine Learning</span>, <span className="passion">Cloud Infrastructure</span>, and <span className="passion">Cyber Security</span>.
+                <span className="d-none d-md-inline">
+                  I'm a <span className="major">Computer Science</span> student at Dalhousie University, passionate to learn about <span className="passion">Machine Learning</span>, <span className="passion">Cloud Infrastructure</span>, and <span className="passion">Cyber Security</span>.
+                </span>
+                <span className="d-md-none">
+                  I'm a <span className="major">Computer Science</span> student at Dalhousie University.
+                </span>
                 {/* <span className="passion">Full-Stack Development</span> and <span className="passion">Cloud Infrastructure</span>. */}
               </p>
+              
+              <div className="hero-image-container mb-4">
+                <img 
+                  ref={imageRef}
+                  src='./homeBG.jpeg' 
+                  alt="Kevin Nguyen" 
+                  className="hero-image" 
+                />
+              </div>
+              
               <div className="cta-buttons d-flex justify-content-center gap-3">
                 <Nav.Link as={Link} to="/about" className="btn btn-primary aboutMeBtn mb-1">
                   About Me
@@ -72,16 +87,6 @@ const Home = () => {
                   <FaEnvelope />
                 </a>
               </div>
-            </div>
-          </Col>
-          <Col xs={5} lg={6} className="d-flex justify-content-center align-items-center">
-            <div className="hero-image-container">
-              <img 
-                ref={imageRef}
-                src='./homeBG.jpeg' 
-                alt="Background" 
-                className="hero-image" 
-              />
             </div>
           </Col>
         </Row>

@@ -5,6 +5,7 @@
   position: relative;
   z-index: 1;
   background: linear-gradient(135deg, var(--bg-color) 0%, rgba(var(--primary-color-rgb), 0.05) 100%);
+  padding-top: 0.2rem;
 }
 
 .home-container > * {
@@ -223,6 +224,7 @@
 @media (max-width: 991.98px) {
   .home-container{
     padding-left: 4%;
+    padding-top: 8rem;
   }
   .hero-content {
     padding: 1rem 0;
