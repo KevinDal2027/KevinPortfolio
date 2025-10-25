@@ -15,7 +15,7 @@ const ProjectsGallery = () => {
   return (
     <div className="projects-section">
       <ParticleBackground />
-      <h2 className="gallery-header">Projects Gallery</h2>
+      <h1 className="gallery-header">Projects Gallery</h1>
       <div className="projects-container">
         <div className="gallery-grid">
           {projects.map((project, idx) => (

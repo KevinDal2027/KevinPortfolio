@@ -5,9 +5,10 @@ import MyNavbar from './components/MyNavBar';
 import Home from './components/Home';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import About from './components/About';
+// import About from './components/About';
 import ProjectsGallery from './components/ProjectsGallery';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import AboutTimeline from './components/AboutTimeline';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,9 +28,9 @@ function App() {
       <MyNavbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/experience" element={<Experience />} />
+        {/* <Route path="/experience" element={<Experience />} /> */}
         <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About darkMode={darkMode} />} />
+        <Route path="/about" element={<AboutTimeline darkMode={darkMode} />} />
         <Route
           path="/gallery"
           element={
