@@ -154,9 +154,11 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                 variant="outline-light"
                 className="more-details-button"
                 onClick={() => toggleCollapse(carouselIndex)}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
               >
-                <span className="d-none d-md-inline">More details about this project</span>
-                <span className="d-md-none">More details</span>
+                <span style={{ fontSize: '1.3em', fontWeight: 'bold', color: '#ffd700', lineHeight: 1 }}>
+                  i
+                </span>
               </Button>
             </div>
             {loading ? (
@@ -303,9 +305,11 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
           variant="outline-light"
           className="more-details-button"
           onClick={() => toggleCollapse(carouselIndex)}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
         >
-          <span className="d-none d-md-inline">More details about this project</span>
-          <span className="d-md-none">More details</span>
+          <span style={{ fontSize: '1.3em', fontWeight: 'bold', color: '#ffd700', lineHeight: 1 }}>
+            i
+          </span>
         </Button>
       </div>
       <div className="projects-container">

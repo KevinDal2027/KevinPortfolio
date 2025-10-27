@@ -623,36 +623,33 @@ button.btn-light:hover {
   position: relative;
 }
 
-.back-to-gallery {
-  background-color: #333;
-  color: #00ff00;
-  border: 2px solid #00ff00;
-  border-radius: 25px;
-  padding: 8px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.5);
-  cursor: pointer;
+.back-to-gallery, .more-details-button {
+  background: linear-gradient(90deg, #232526 0%, #414345 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
   margin: 0;
   position: static;
+  outline: none;
 }
-
-.more-details-button {
-  background-color: #333;
-  color: #00ff00;
-  border: 2px solid #00ff00;
-  border-radius: 25px;
-  padding: 8px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 255, 0, 0.5);
-  cursor: pointer;
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.back-to-gallery:hover, .more-details-button:hover {
+  background: linear-gradient(90deg, #313233 0%, #606163 100%);
+  color: #ffd700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  transform: translateY(-2px) scale(1.03);
+}
+@media (max-width: 600px) {
+  .back-to-gallery, .more-details-button {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    border-radius: 7px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -666,6 +663,9 @@ button.btn-light:hover {
   }
   .back-to-gallery,
   .more-details-button {
+    background-color: #232323;
+    color: #fff;
+    border: 2px solid #444;
     min-width: 0;
     max-width: 48%;
     flex: 1 1 0;
@@ -685,6 +685,24 @@ button.btn-light:hover {
   }
   .skillsWrap6, .skillsWrap7 {
     height: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .more-details-button {
+    min-width: unset;
+    max-width: unset;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px; /* square, not circle */
+    font-size: 1.2rem;
+  }
+  .more-details-button span {
+    font-size: 1.3em;
   }
 }
 

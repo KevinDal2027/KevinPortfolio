@@ -1,6 +1,55 @@
 // projectData.js
 const projects = [
   {
+  id: 'homeServer',
+  title: 'Home Server Infrastructure',
+  thumbnail: './assets/projectThumbnails/homeserver.png',
+  tag: 'Server / Infrastructure',
+  date: '2025-10',
+  description: 'A personal Linux-based home server designed to host self-deployed projects on the domain kevinqh.com. Built for reliability, security, and local control using Docker, Nginx, and Cloudflare tunneling.',
+  details: {
+    inspiration: 'I wanted a single reliable machine to host all my personal projects without depending on external cloud services. This home server lets me control deployment, networking, and automation in my own environment.',
+    timeline: 'Ongoing project started in 2025 to experiment with infrastructure management, service hosting, and network configuration.',
+    learning: 'I learned how to set up and maintain a local Linux server, configure Nginx reverse proxy with SSL, and deploy containerized apps using Docker Compose. It gave me hands-on experience with DNS routing, security hardening, and uptime management.'
+  },
+  links: {
+  },
+  skills: [
+    { alt: 'Linux icon', src: './assets/skills/Linux.svg' },
+    { alt: 'Docker icon', src: './assets/skills/docker.png' },
+    { alt: 'Nginx icon', src: './assets/skills/nginx.svg' },
+    { alt: 'Cloudflare icon', src: './assets/skills/cloudflare.png' },
+    { alt: 'Bash icon', src: './assets/skills/Bash.svg' },
+    { alt: 'DNS icon', src: './assets/skills/dns.png' }
+  ]
+},
+  {
+  id: 'selfHostedAI',
+  title: 'Self-Hosted AI Assistant',
+  thumbnail: './assets/projectThumbnails/kevinai.png',
+  tag: 'DevOps / Infrastructure',
+  date: '2025-10',
+  description: 'A fully self-hosted AI assistant deployed on a home server (an old 2014 ThinkPad) with Docker, Node.js, FastAPI, and Ollama. The system allows real-time local inference through a custom frontend and backend.',
+  details: {
+    inspiration: 'I wanted to build my own AI system that runs entirely on local hardware — no external API or cloud dependency. It’s a personal assistant I can control, modify, and deploy myself. This project started as an experiment in containerization and quickly became a full self-hosted setup.',
+    timeline: 'Developed in October 2025 as a personal DevOps project to explore container orchestration, backend integration, and self-hosted AI deployment.',
+    learning: 'I learned how to containerize full-stack services using Docker, configure model backends with Ollama, and integrate FastAPI and Node.js for real-time communication. It deepened my understanding of local infrastructure management, network routing, and deployment automation.'
+  },
+  links: {
+    website: 'https://ai.kevinqh.com',
+    github: 'https://github.com/KevinDal2027/SelfHosted-AI-Kevin'
+  },
+  skills: [
+    { alt: 'Docker icon', src: './assets/skills/docker.png' },
+    { alt: 'NodeJS icon', src: './assets/skills/NodeJS.svg' },
+    { alt: 'FastAPI icon', src: './assets/skills/fastapi.png' },
+    { alt: 'Ollama icon', src: './assets/skills/ollama.png' },
+    { alt: 'Linux icon', src: './assets/skills/Linux.svg' },
+    { alt: 'NGINX icon', src: './assets/skills/nginx.svg' },
+    { alt: 'Bash icon', src: './assets/skills/Bash.svg' }
+  ]
+},
+  {
     id: 'wifiChannelScanner',
     title: 'WiFi Channel Scanner',
     thumbnail: './assets/projectThumbnails/WifiScanner.png',
