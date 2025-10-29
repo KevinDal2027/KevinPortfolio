@@ -10,7 +10,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v1
+        with:
+          authkey: ${{ secrets.TAILSCALE_SSH_KEY }}
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v0.1.10
         with:
@@ -21,6 +24,7 @@ jobs:
           script: |
             cd ~/Projects/Selfhosted-AI-Kevin
             git pull origin main
+            npm install --production
             npm run build
             docker-compose down
             docker-compose up --build -d
