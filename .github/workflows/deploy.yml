@@ -28,4 +28,4 @@ jobs:
             npm run build
             docker-compose down
             docker-compose up --build -d
-            tailscale logout
+            sudo tailscale logout
