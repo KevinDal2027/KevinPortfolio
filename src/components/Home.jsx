@@ -43,7 +43,7 @@ const Home = () => {
     <div className="home-container">
       <ParticleBackground />
       <Container fluid>
-        <Row className="justify-content-center min-vh-100 pt-5">
+        <Row className="justify-content-center" style={{ height: '100%', margin: 0 }}>
           <Col xs={12} lg={8} className="text-center">
             <div className="hero-content">
               <h1 className="display-4 fw-bold mb-4">
