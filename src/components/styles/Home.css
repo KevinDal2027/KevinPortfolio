@@ -171,6 +171,16 @@
   padding: 0.5rem;
   border-radius: 50%;
   background: rgba(var(--primary-color-rgb), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+}
+
+.social-link svg {
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .social-link:hover {
@@ -300,6 +310,13 @@
   .social-link {
     font-size: 1rem;
     padding: 0.3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .social-link svg {
+    width: 1.3rem;
+    height: 1.3rem;
   }
 }
 
@@ -342,12 +359,13 @@
 
   .cta-buttons {
     margin: 0.3rem 0;
-    flex-direction: column;
-    gap: 0.3rem;
+    flex-direction: row;
+    gap: 0.5rem;
   }
 
   .cta-buttons .btn {
-    width: 100%;
+    width: auto;
+    flex: 1;
     margin: 0;
     font-size: 0.85rem;
     padding: 0.35rem 0.7rem;
@@ -362,5 +380,12 @@
   .social-link {
     font-size: 0.9rem;
     padding: 0.25rem;
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .social-link svg {
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
