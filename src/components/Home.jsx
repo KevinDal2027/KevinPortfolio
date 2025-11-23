@@ -15,7 +15,7 @@ const Home = () => {
   const roles = [
     "Computer Science @ Dalhousie University",
     "IT Technician @ Dalhousie ITS",
-    "Software Developer @ Department of National Defence"
+    "SDE @ Department of National Defence"
   ];
 
   useEffect(() => {
@@ -83,8 +83,8 @@ const Home = () => {
               <h1 className="display-4 fw-bold mb-4">
                 <span className="highlight text-gradient">Kevin Nguyen</span>
               </h1>
-              <div className="mb-3" style={{ minHeight: '2rem' }}>
-                <span className="typewriter d-inline-block fw-bold" style={{ color: 'var(--text-color)' }}>
+              <div className="mb-3 typewriter-container" style={{ minHeight: '2rem' }}>
+                <span className="typewriter fw-bold" style={{ color: 'var(--text-color)' }}>
                   {text}
                 </span>
               </div>
