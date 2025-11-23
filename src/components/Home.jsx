@@ -1,12 +1,46 @@
 import React, { useEffect, useRef } from 'react';
 import { Nav, Container, Row, Col } from "react-bootstrap";
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ParticleBackground from './ParticleBackground';
 import './styles/Home.css';
 
 const Home = () => {
   const imageRef = useRef(null);
+  const [text, setText] = React.useState('');
+  const [isDeleting, setIsDeleting] = React.useState(false);
+  const [loopNum, setLoopNum] = React.useState(0);
+  const [typingSpeed, setTypingSpeed] = React.useState(50);
+
+  const roles = [
+    "Computer Science @ Dalhousie University",
+    "IT Technician @ Dalhousie ITS",
+    "Software Developer @ Department of National Defence"
+  ];
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const i = loopNum % roles.length;
+      const fullText = roles[i];
+
+      setText(isDeleting
+        ? fullText.substring(0, text.length - 1)
+        : fullText.substring(0, text.length + 1)
+      );
+
+      setTypingSpeed(isDeleting ? 20 : 50);
+
+      if (!isDeleting && text === fullText) {
+        setTimeout(() => setIsDeleting(true), 1500);
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, loopNum, typingSpeed, roles]);
 
   useEffect(() => {
     const card = imageRef.current;
@@ -40,34 +74,29 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="home-container position-relative">
       <ParticleBackground />
       <Container fluid>
         <Row className="justify-content-center" style={{ height: '100%', margin: 0 }}>
           <Col xs={12} lg={8} className="text-center">
             <div className="hero-content">
               <h1 className="display-4 fw-bold mb-4">
-                <span className="highlight">Kevin Nguyen</span>
+                <span className="highlight text-gradient">Kevin Nguyen</span>
               </h1>
-              <p className="lead mb-4">
-                <span className="d-none d-md-inline">
-                  I'm a <span className="major">Computer Science</span> student at Dalhousie University, passionate to learn about <span className="passion">Machine Learning</span>, <span className="passion">Cloud Infrastructure</span>, and <span className="passion">Cyber Security</span>.
+              <div className="mb-3" style={{ minHeight: '2rem' }}>
+                <span className="typewriter d-inline-block fw-bold" style={{ color: 'var(--text-color)' }}>
+                  {text}
                 </span>
-                <span className="d-md-none">
-                  I'm a <span className="major">Computer Science</span> student at Dalhousie University.
-                </span>
-                {/* <span className="passion">Full-Stack Development</span> and <span className="passion">Cloud Infrastructure</span>. */}
-              </p>
-              
+              </div>
               <div className="hero-image-container mb-4">
-                <img 
+                <img
                   ref={imageRef}
-                  src='./homeBG.jpeg' 
-                  alt="Kevin Nguyen" 
-                  className="hero-image" 
+                  src='./homeBG.jpeg'
+                  alt="Kevin Nguyen"
+                  className="hero-image"
                 />
               </div>
-              
+
               <div className="cta-buttons d-flex justify-content-center gap-3">
                 <Nav.Link as={Link} to="/about" className="btn btn-primary aboutMeBtn mb-1">
                   About Me
@@ -83,7 +112,7 @@ const Home = () => {
                 <a href="https://github.com/KevinDal2027" target="_blank" rel="noopener noreferrer" className="social-link">
                   <FaGithub />
                 </a>
-                <a href="mailto:kevinhao710@Outlook.com" className="social-link">
+                <a href="mailto:kv375322@dal.ca" className="social-link">
                   <FaEnvelope />
                 </a>
               </div>
@@ -91,6 +120,9 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
+      <div className="scroll-indicator">
+        <FaChevronDown />
+      </div>
     </div>
   );
 };

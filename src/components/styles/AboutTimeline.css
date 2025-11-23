@@ -2,12 +2,12 @@
     min-height: 100vh;
     padding: 2rem 0;
     position: relative;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, var(--bg-color) 0%, rgba(var(--primary-color-rgb), 0.05) 100%);
     transition: all 0.3s ease;
   }
   
   .about-timeline-container.dark-mode {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    background: linear-gradient(135deg, var(--bg-color) 0%, rgba(var(--primary-color-rgb), 0.05) 100%);
     color: #ffffff;
   }
   
@@ -17,23 +17,53 @@
   
   .timeline-title {
     font-size: 3.5rem;
-    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
+  }
+
+  .timeline-title::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    opacity: 0.3;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+
+  .timeline-title:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
   
   .dark-mode .timeline-title {
-    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark-mode .timeline-title::after {
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
   }
   
   .timeline-subtitle {
     font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
     opacity: 0.8;
     margin-bottom: 2rem;
   }
@@ -162,6 +192,7 @@
   .timeline-date {
     font-size: 0.9rem;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
     color: #007aff;
     margin-bottom: 0.5rem;
   }
@@ -172,7 +203,8 @@
   
   .timeline-item-title {
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 0.25rem;
     color: #1d1d1f;
   }
@@ -184,6 +216,7 @@
   .timeline-item-subtitle {
     font-size: 1.1rem;
     font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 0.5rem;
     color: #424245;
   }
@@ -201,6 +234,7 @@
   
   .timeline-description {
     font-size: 0.95rem;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     color: #515154;
     margin: 0;
@@ -236,6 +270,13 @@
   }
   
   /* Responsive Design */
+  @media (max-width: 991.98px) {
+    .timeline-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
   @media (max-width: 768px) {
     .timeline::before {
       left: 30px;
@@ -260,12 +301,16 @@
       max-width: none;
       margin-left: 1rem;
     }
-  
-    .timeline-title {
-      font-size: 2.5rem;
-    }
   }
   
+  @media (max-width: 767.98px) {
+    .timeline-title {
+      font-size: 1.5rem;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+    }
+  }
+
   @media (max-width: 480px) {
     .about-timeline-container {
       padding: 1rem 0;
@@ -276,7 +321,9 @@
     }
   
     .timeline-title {
-      font-size: 2rem;
+      font-size: 1.5rem;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
     }
   
     .timeline-card {

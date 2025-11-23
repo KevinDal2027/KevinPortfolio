@@ -5,7 +5,18 @@ import ParticleBackground from './ParticleBackground';
 import './styles/AboutTimeline.css';
 
 const AboutTimeline = ({ darkMode }) => {
+  // Timeline data ordered from newest to oldest (top to bottom in array)
+  // Add new experiences at the top of the array - they will display at the top
   const timelineData = [
+    {
+      id: 0,
+      date: "January 2026 - May 2026",
+      title: "Incoming Software Developer - Co-op Internship",
+      subtitle: "Department of National Defence Canada",
+      location: "Halifax, Nova Scotia",
+      type: "work",
+      description: "Will see"
+    },
     {
       id: 1,
       date: "September 2025 - Present",

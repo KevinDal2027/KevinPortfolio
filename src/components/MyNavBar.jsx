@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, useLocation } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaRobot } from "react-icons/fa";
 import "./styles/MyNavBar.css";
 
-const MyNavbar = ({ darkMode, setDarkMode }) => {
+const MyNavbar = ({ darkMode }) => {
   const [expanded, setExpanded] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -19,12 +19,6 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark-mode", !darkMode);
-    handleSelect();
-  };
 
   const handleToggle = () => {
     setExpanded(!expanded);
@@ -59,8 +53,8 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
           />
         </Navbar.Brand>
 
-        <Navbar.Toggle 
-          aria-controls="responsive-navbar" 
+        <Navbar.Toggle
+          aria-controls="responsive-navbar"
           onClick={() => {
             handleToggle();
             setClicked(!clicked);
@@ -72,17 +66,17 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
 
         <Navbar.Collapse id="responsive-navbar">
           <Nav className="ms-auto">
-            <Nav.Link 
-              as={Link} 
-              to="/" 
+            <Nav.Link
+              as={Link}
+              to="/"
               className={`nav-link ${isActive('/') ? 'active' : ''}`}
               onClick={handleSelect}
             >
               Home
             </Nav.Link>
-            <Nav.Link 
-              as={Link} 
-              to="/about" 
+            <Nav.Link
+              as={Link}
+              to="/about"
               className={`nav-link ${isActive('/about') ? 'active' : ''}`}
               onClick={handleSelect}
             >
@@ -96,38 +90,43 @@ const MyNavbar = ({ darkMode, setDarkMode }) => {
             >
               Experience
             </Nav.Link> */}
-            <Nav.Link 
-              as={Link} 
-              to="/gallery" 
+            <Nav.Link
+              as={Link}
+              to="/gallery"
               className={`nav-link ${isActive('/gallery') ? 'active' : ''}`}
               onClick={handleSelect}
             >
               Projects
             </Nav.Link>
-            
+
             <div className="nav-icons">
-              <button 
-                className="theme-toggle"
-                onClick={toggleDarkMode}
-                aria-label="Toggle dark mode"
-              >
-                {darkMode ? <FaSun /> : <FaMoon />}
-              </button>
-              <a 
-                href="https://github.com/KevinDal2027" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://github.com/KevinDal2027"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="nav-icon"
+                onClick={handleSelect}
               >
                 <FaGithub />
               </a>
-              <a 
-                href="https://linkedin.com/in/kevin-nguyen-dal" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com/in/kevin-nguyen-dal"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="nav-icon"
+                onClick={handleSelect}
               >
                 <FaLinkedin />
+              </a>
+
+              <a
+                href="https://ai.kevinqh.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-icon"
+                onClick={handleSelect}
+              >
+                <FaRobot />
               </a>
             </div>
           </Nav>

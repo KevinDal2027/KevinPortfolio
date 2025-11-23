@@ -3,16 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import MyNavbar from './components/MyNavBar';
 import Home from './components/Home';
-import Experience from './components/Experience';
 import Projects from './components/Projects';
 // import About from './components/About';
 import ProjectsGallery from './components/ProjectsGallery';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import AboutTimeline from './components/AboutTimeline';
+import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [galleryOpenProject, setGalleryOpenProject] = useState(null);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.body.classList.toggle("dark-mode", !darkMode);
+  };
 
   // Handler to open the Projects carousel modal from the gallery
   const handleProjectClick = (idx) => {
@@ -25,7 +30,8 @@ function App() {
 
   return (
     <Router>
-      <MyNavbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <MyNavbar darkMode={darkMode} />
+      <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/experience" element={<Experience />} /> */}

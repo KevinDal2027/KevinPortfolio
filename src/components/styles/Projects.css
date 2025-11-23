@@ -4,6 +4,7 @@
   min-height: 100vh;
   background: linear-gradient(135deg, var(--bg-color) 0%, rgba(var(--primary-color-rgb), 0.05) 100%);
   color: white;
+  text-align: center;
 }
 
 .projects-container {
@@ -42,6 +43,7 @@
 
 .project-card .card-text {
   padding: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .project-details {
@@ -75,11 +77,14 @@
 
 .theDescription h4 {
   color: #00ff00;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .theDescription p {
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -356,6 +361,8 @@ button.btn-light:hover {
   
   .card-title {
     font-size: 1.5rem !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
   }
   
   .btn {
@@ -540,6 +547,7 @@ button.btn-light:hover {
 .gallery-title {
   font-size: 1.05rem;
   font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.2rem;
   color: white;
   line-height: 1.3;
@@ -547,6 +555,7 @@ button.btn-light:hover {
 
 .gallery-date {
   font-size: 0.92rem;
+  font-family: 'Roboto', sans-serif;
   color: #aaa;
 }
 
@@ -707,28 +716,48 @@ button.btn-light:hover {
 }
 
 .gallery-header {
-  display: block;
-  margin: 0 auto 1.5rem auto;
+  display: inline-block;
+  margin: 0 auto 1rem auto;
   text-align: center;
   font-size: 3.5rem;
-  font-weight: 700;
+  line-height: 1.2;
+  font-weight: 800;
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-  border-radius: 10px;
-  padding: 0.5rem 1.5rem;
-  width: fit-content;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+
+.gallery-header::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  opacity: 0.3;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.gallery-header:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .dark-mode .gallery-header {
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.35);
-  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .gallery-header::after {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
 }
 
 .gallery-subheader {
@@ -743,11 +772,14 @@ button.btn-light:hover {
 @media (max-width: 991.98px) {
   .gallery-header {
     font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
 }
 
 @media (max-width: 767.98px) {
   .gallery-header {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
   }
 }

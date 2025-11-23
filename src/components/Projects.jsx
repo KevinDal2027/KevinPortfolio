@@ -15,7 +15,7 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
   const [expandedDescription, setExpandedDescription] = useState({});
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const handleResize = () => {
     setIsMobile(window.innerWidth < 768);
   };
@@ -56,7 +56,7 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
   }, [isModalFromGallery]);
 
   const handleImageLoad = (imageId) => {
-    setImagesLoaded(prev => ({...prev, [imageId]: true}));
+    setImagesLoaded(prev => ({ ...prev, [imageId]: true }));
   };
 
   const calculateDaysSince = (startDate) => {
@@ -230,10 +230,10 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                                 project.skills.length === 11
                                   ? 'skillsWrap11 pb-5'
                                   : project.skills.length === 7
-                                  ? 'skillsWrap7 pb-5'
-                                  : project.skills.length === 6
-                                  ? 'skillsWrap6 pb-5'
-                                  : 'skills2 pt-4 d-flex justify-content-around'
+                                    ? 'skillsWrap7 pb-5'
+                                    : project.skills.length === 6
+                                      ? 'skillsWrap6 pb-5'
+                                      : 'skills2 pt-4 d-flex justify-content-around'
                               }
                             >
                               {project.skills.map((skill, i) => (
@@ -243,10 +243,10 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                                     project.skills.length === 11
                                       ? `item_11 item${i + 1}_11`
                                       : project.skills.length === 7
-                                      ? `item_7 item${i + 1}`
-                                      : project.skills.length === 6
-                                      ? `item_6 item${i + 1}_6`
-                                      : ''
+                                        ? `item_7 item${i + 1}`
+                                        : project.skills.length === 6
+                                          ? `item_6 item${i + 1}_6`
+                                          : ''
                                   }
                                 >
                                   <img alt={skill.alt} width="150px" src={skill.src} />
@@ -382,10 +382,10 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                             project.skills.length === 11
                               ? 'skillsWrap11 pb-5'
                               : project.skills.length === 7
-                              ? 'skillsWrap7 pb-5'
-                              : project.skills.length === 6
-                              ? 'skillsWrap6 pb-5'
-                              : 'skills2 pt-4 d-flex justify-content-around'
+                                ? 'skillsWrap7 pb-5'
+                                : project.skills.length === 6
+                                  ? 'skillsWrap6 pb-5'
+                                  : 'skills2 pt-4 d-flex justify-content-around'
                           }
                         >
                           {project.skills.map((skill, i) => (
@@ -395,10 +395,10 @@ const Projects = ({ initialIndex = 0, onClose, isModalFromGallery }) => {
                                 project.skills.length === 11
                                   ? `item_11 item${i + 1}_11`
                                   : project.skills.length === 7
-                                  ? `item_7 item${i + 1}`
-                                  : project.skills.length === 6
-                                  ? `item_6 item${i + 1}_6`
-                                  : ''
+                                    ? `item_7 item${i + 1}`
+                                    : project.skills.length === 6
+                                      ? `item_6 item${i + 1}_6`
+                                      : ''
                               }
                             >
                               <img alt={skill.alt} width="150px" src={skill.src} />

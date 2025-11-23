@@ -61,10 +61,10 @@
 .highlight {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
   position: relative;
   display: inline-block;
 }
@@ -199,8 +199,8 @@
 }
 
 .dark-mode .passion {
-  color: #4ECDC4;
-  text-shadow: 0 0 8px rgba(78, 205, 196, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .dark-mode .highlight {
