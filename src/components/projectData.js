@@ -1,6 +1,32 @@
 // projectData.js
 const projects = [
   {
+    id: 'learnBuds',
+    title: 'LearnBuds - Hybrid Cloud AI Platform',
+    thumbnail: './assets/projectThumbnails/learnbuds.png',
+    tag: 'Hybrid Cloud / AI',
+    date: '2025-12',
+    description: 'A hybrid cloud SaaS platform enabling context-aware Q&A on PDF course materials. It features a self-hosted React frontend and a serverless Azure backend using Event Grid and RAG architecture.',
+    details: {
+      inspiration: 'As a student, I wanted a tool to quickly find answers in long lecture slides without searching manually. I also wanted to challenge myself to build a "Hybrid Cloud" architecture that merged my passion for home-lab self-hosting with enterprise-grade public cloud services.',
+      timeline: 'Developed in December 2025 as a term project, evolving from a pure AWS setup to a modern Azure Flex Consumption architecture.',
+      learning: 'I mastered the Azure Python V2 model, implemented Event-Driven ingestion pipelines with Event Grid, and built a custom Retrieval-Augmented Generation (RAG) system using PostgreSQL (pgvector) and Google Gemini. It taught me how to bridge local infrastructure with the cloud securely.'
+    },
+    links: {
+      website: 'https://learnerbuds.kevinqh.com',
+      github: 'https://github.com/KevinDal2027/LearnsBud'
+    },
+    skills: [
+      { alt: 'React icon', src: './assets/skills/React.js.svg' },
+      { alt: 'Azure icon', src: './assets/skills/azure.png' },
+      { alt: 'Python icon', src: './assets/skills/Python.svg' },
+      { alt: 'Docker icon', src: './assets/skills/docker.png' },
+      { alt: 'PostgreSQL icon', src: './assets/skills/postgres.png' },
+      { alt: 'AWS icon', src: './assets/skills/aws.png' },
+      { alt: 'GeminiAI icon', src: './assets/skills/gemini.svg' }
+    ]
+  },
+  {
   id: 'homeServer',
   title: 'Home Server Infrastructure',
   thumbnail: './assets/projectThumbnails/homeserver.png',
